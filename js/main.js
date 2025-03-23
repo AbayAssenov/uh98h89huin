@@ -18,6 +18,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Переключение языков
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const translateElements = document.querySelectorAll('.translate');
+  const inputFields = document.querySelectorAll('input, textarea');
+  let currentLanguage = 'ru';
+
+  // Инициализация языка
+  setLanguage(currentLanguage);
+
+  // Обработчик переключения языка
+  langButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang');
+      if (lang !== currentLanguage) {
+        currentLanguage = lang;
+        setLanguage(currentLanguage);
+        
+        // Установка активной кнопки
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      }
+    });
+  });
+
+  // Функция установки языка
+  function setLanguage(lang) {
+    translateElements.forEach(element => {
+      if (element.getAttribute(`data-${lang}`)) {
+        element.textContent = element.getAttribute(`data-${lang}`);
+      }
+    });
+
+    // Обновление плейсхолдеров для полей ввода
+    inputFields.forEach(field => {
+      const placeholder = field.getAttribute(`data-${lang}-placeholder`);
+      if (placeholder) {
+        field.placeholder = placeholder;
+      }
+    });
+  }
+
   // Обработка отправки формы
   const contactForm = document.querySelector('.contact-form');
   
@@ -49,7 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.reset();
       
       // Показываем уведомление
-      showNotification('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+      const successMessage = currentLanguage === 'ru' 
+        ? 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.' 
+        : 'Message sent! We will contact you soon.';
+      showNotification(successMessage);
     });
   }
   
@@ -68,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Анимация космических элементов
+  animateSpace();
 });
 
 // Функция показа уведомления
@@ -89,6 +136,7 @@ function showNotification(message) {
   notification.style.opacity = '0';
   notification.style.transform = 'translateY(20px)';
   notification.style.transition = 'opacity 0.3s, transform 0.3s';
+  notification.style.zIndex = '1000';
   
   // Добавляем в DOM
   document.body.appendChild(notification);
@@ -122,6 +170,57 @@ function animateOnScroll() {
       element.style.opacity = '1';
       element.style.transform = 'translateY(0)';
     }
+  });
+}
+
+// Анимация космических элементов
+function animateSpace() {
+  const rocket = document.querySelector('.rocket');
+  const stars = document.querySelectorAll('.star');
+  const planets = document.querySelectorAll('.planet');
+
+  // Анимация ракеты
+  if (rocket) {
+    setInterval(() => {
+      const x = Math.random() * window.innerWidth * 0.8;
+      const y = Math.random() * window.innerHeight * 0.7;
+      
+      rocket.style.transition = 'transform 15s ease-in-out, opacity 2s';
+      rocket.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+      
+      setTimeout(() => {
+        rocket.style.opacity = '0.7';
+        
+        setTimeout(() => {
+          rocket.style.opacity = '0';
+          
+          setTimeout(() => {
+            rocket.style.transition = 'none';
+            rocket.style.transform = `translate(${-100}px, ${window.innerHeight + 100}px)`;
+            
+            setTimeout(() => {
+              rocket.style.opacity = '1';
+            }, 500);
+          }, 2000);
+        }, 8000);
+      }, 5000);
+    }, 20000);
+  }
+
+  // Анимация звезд (мерцание)
+  stars.forEach(star => {
+    const randomDuration = 3 + Math.random() * 7;
+    const randomDelay = Math.random() * 5;
+    
+    star.style.animation = `twinkle ${randomDuration}s infinite ${randomDelay}s`;
+  });
+
+  // Анимация планет (вращение)
+  planets.forEach(planet => {
+    const randomDuration = 50 + Math.random() * 100;
+    const randomDelay = Math.random() * 10;
+    
+    planet.style.animation = `orbit ${randomDuration}s linear infinite ${randomDelay}s`;
   });
 }
 
