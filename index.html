@@ -2,11 +2,169 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Starfire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFDR — Starfire Digital Research</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Добро пожаловать в Starfire!!</h1>
-  <p>Мы запускаем бизнес по разработке цифровых продуктов. Следите за новостями.</p>
-</body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img src="images/logo.svg" alt="SFDR Logo" width="100">
+        </a>
+        <div class="nav-links">
+          <a href="#about">О нас</a>
+          <a href="#products">Продукты</a>
+          <a href="#why-us">Почему мы</a>
+          <a href="#contact">Контакты</a>
+        </div>
+      </nav>
+      
+      <div class="hero">
+        <h1>Digital products. Built with purpose.</h1>
+        <p class="subtitle">Мы создаём технологичные решения, которые масштабируются и приносят результат.</p>
+        <button class="cta-button">Обсудить идею</button>
+      </div>
+    </div>
+  </header>
 
+  <section id="about" class="about">
+    <div class="container">
+      <h2>О нас</h2>
+      <p class="about-text">SFDR — это независимая продуктовая команда. Мы не outsource, мы — builders. Разрабатываем свои продукты на собственные инвестиции.</p>
+      
+      <div class="principles">
+        <div class="principle">
+          <h3>Независимость</h3>
+          <p>Работаем на собственных условиях и выбираем проекты, в которые верим.</p>
+        </div>
+        <div class="principle">
+          <h3>Стратегичность</h3>
+          <p>Строим решения с долгосрочной перспективой и развитием.</p>
+        </div>
+        <div class="principle">
+          <h3>Чистая инженерия</h3>
+          <p>Разрабатываем продукты на основе лучших практик и высоких стандартов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="container">
+      <h2>Наши продукты</h2>
+      <div class="product-cards">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/placeholder.svg" alt="Project Alpha" width="100%">
+          </div>
+          <h3>Project Alpha</h3>
+          <p>Инновационная платформа для управления цифровыми активами.</p>
+          <span class="product-stage">MVP</span>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/placeholder.svg" alt="DataFlow" width="100%">
+          </div>
+          <h3>DataFlow</h3>
+          <p>Система аналитики и обработки больших данных для бизнеса.</p>
+          <span class="product-stage">Beta</span>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/placeholder.svg" alt="NexGen" width="100%">
+          </div>
+          <h3>NexGen</h3>
+          <p>Платформа для интеграции AI в рабочие процессы компаний.</p>
+          <span class="product-stage">Live</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <h2>Почему мы</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>12 человек в команде</h3>
+          <p>Разработчики, дизайнеры, аналитики — профессионалы своего дела.</p>
+        </div>
+        <div class="feature">
+          <h3>Офис в Казахстане</h3>
+          <p>Работаем глобально, создаем продукты для международного рынка.</p>
+        </div>
+        <div class="feature">
+          <h3>Собственный капитал</h3>
+          <p>Независимое развитие и стратегические решения.</p>
+        </div>
+        <div class="feature">
+          <h3>Мобильная разработка</h3>
+          <p>Создаем нативные приложения для iOS и Android платформ.</p>
+        </div>
+      </div>
+      
+      <div class="tech-stack">
+        <h3>Технологии, которые мы используем:</h3>
+        <div class="technologies">
+          <div class="tech-item">React</div>
+          <div class="tech-item">Next.js</div>
+          <div class="tech-item">TypeScript</div>
+          <div class="tech-item">Tailwind CSS</div>
+          <div class="tech-item">iOS (Swift)</div>
+          <div class="tech-item">Android (Kotlin)</div>
+          <div class="tech-item">Java (Spring Boot)</div>
+          <div class="tech-item">PostgreSQL</div>
+          <div class="tech-item">Supabase</div>
+          <div class="tech-item">Node.js</div>
+          <div class="tech-item">AWS</div>
+          <div class="tech-item">Docker</div>
+          <div class="tech-item">GitHub Actions</div>
+          <div class="tech-item">OpenAI API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Связаться с нами</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>Email:</span>
+            <a href="mailto:info@sfdr.com">info@sfdr.com</a>
+          </div>
+          <div class="contact-item">
+            <span>Telegram:</span>
+            <a href="https://t.me/sfdr_team">@sfdr_team</a>
+          </div>
+          <div class="contact-item">
+            <span>LinkedIn:</span>
+            <a href="https://linkedin.com/company/sfdr">SFDR</a>
+          </div>
+        </div>
+        
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Сообщение" required></textarea>
+          <button type="submit" class="submit-button">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© SFDR — Starfire Digital Research. 2025</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
