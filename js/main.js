@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Переключение языков
   const langButtons = document.querySelectorAll('.lang-btn');
-  const translateElements = document.querySelectorAll('.translate');
+  const translatedElements = document.querySelectorAll('[data-ru], [data-en]');
   const inputFields = document.querySelectorAll('input, textarea');
   let currentLanguage = 'ru';
 
@@ -44,9 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Функция установки языка
   function setLanguage(lang) {
-    translateElements.forEach(element => {
+    console.log(`Устанавливаю язык: ${lang}`);
+    console.log(`Найдено элементов для перевода: ${translatedElements.length}`);
+    
+    // Обновление текста всех элементов с атрибутами data-ru/data-en
+    translatedElements.forEach(element => {
       if (element.getAttribute(`data-${lang}`)) {
-        element.textContent = element.getAttribute(`data-${lang}`);
+        const originalText = element.textContent;
+        const translatedText = element.getAttribute(`data-${lang}`);
+        element.textContent = translatedText;
+        console.log(`Перевод: "${originalText}" -> "${translatedText}"`);
       }
     });
 
@@ -57,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         field.placeholder = placeholder;
       }
     });
+    
+    console.log(`Язык успешно изменен на: ${lang}`);
   }
 
   // Обработка отправки формы
@@ -179,49 +188,100 @@ function animateSpace() {
   const stars = document.querySelectorAll('.star');
   const planets = document.querySelectorAll('.planet');
 
-  // Анимация ракеты
+  // Создаем дополнительные звезды программно
+  createAdditionalStars(20);
+
+  // Анимация ракеты - сделаем её более заметной и активной
   if (rocket) {
-    setInterval(() => {
+    // Начальная позиция
+    rocket.style.transform = `translate(${window.innerWidth}px, ${window.innerHeight}px)`;
+    rocket.style.opacity = '1';
+    
+    // Функция для анимации ракеты
+    function animateRocket() {
       const x = Math.random() * window.innerWidth * 0.8;
       const y = Math.random() * window.innerHeight * 0.7;
       
-      rocket.style.transition = 'transform 15s ease-in-out, opacity 2s';
-      rocket.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+      rocket.style.transition = 'transform 8s ease-in-out, opacity 2s';
+      rocket.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 60 - 30 + 45}deg)`;
       
       setTimeout(() => {
-        rocket.style.opacity = '0.7';
+        rocket.style.opacity = '0.9';
         
         setTimeout(() => {
-          rocket.style.opacity = '0';
+          // Скрываем ракету
+          rocket.style.opacity = '0.3';
           
           setTimeout(() => {
+            // Перемещаем ракету на новую начальную позицию без анимации
             rocket.style.transition = 'none';
-            rocket.style.transform = `translate(${-100}px, ${window.innerHeight + 100}px)`;
+            rocket.style.transform = `translate(${window.innerWidth + 100}px, ${window.innerHeight * Math.random()}px) rotate(45deg)`;
             
             setTimeout(() => {
+              // Показываем ракету снова
               rocket.style.opacity = '1';
+              
+              // Запускаем новую анимацию через небольшую паузу
+              setTimeout(animateRocket, 1000);
             }, 500);
-          }, 2000);
-        }, 8000);
-      }, 5000);
-    }, 20000);
+          }, 1000);
+        }, 4000);
+      }, 2000);
+    }
+    
+    // Запускаем анимацию ракеты сразу
+    animateRocket();
   }
 
   // Анимация звезд (мерцание)
   stars.forEach(star => {
-    const randomDuration = 3 + Math.random() * 7;
-    const randomDelay = Math.random() * 5;
+    const randomDuration = 2 + Math.random() * 4; // Более быстрое мерцание
+    const randomDelay = Math.random() * 2;
     
     star.style.animation = `twinkle ${randomDuration}s infinite ${randomDelay}s`;
   });
 
   // Анимация планет (вращение)
-  planets.forEach(planet => {
-    const randomDuration = 50 + Math.random() * 100;
-    const randomDelay = Math.random() * 10;
+  planets.forEach((planet, index) => {
+    const randomDuration = 30 + Math.random() * 40; // Более быстрое вращение
+    const randomDelay = Math.random() * 5;
+    const direction = index % 2 === 0 ? 'normal' : 'reverse'; // Чередуем направление
     
     planet.style.animation = `orbit ${randomDuration}s linear infinite ${randomDelay}s`;
+    planet.style.animationDirection = direction;
   });
+}
+
+// Функция для создания дополнительных звезд
+function createAdditionalStars(count) {
+  const starsContainer = document.querySelector('.stars-container');
+  
+  if (!starsContainer) return;
+  
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    
+    // Разные размеры для звезд
+    const size = 1 + Math.random() * 3;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    
+    // Разные цвета для звезд
+    const colors = ['#ffffff', '#ffe9c4', '#d4fbff', '#fff4e0'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    star.style.backgroundColor = randomColor;
+    
+    // Добавляем звезду в контейнер
+    starsContainer.appendChild(star);
+    
+    // Анимируем звезду
+    const randomDuration = 2 + Math.random() * 4;
+    const randomDelay = Math.random() * 2;
+    star.style.animation = `twinkle ${randomDuration}s infinite ${randomDelay}s`;
+  }
 }
 
 // Добавим начальные стили для анимации
@@ -237,4 +297,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Запускаем анимацию при загрузке и при скролле
   animateOnScroll();
   window.addEventListener('scroll', animateOnScroll);
-}); 
+}); console.log('Переключение языка сработало!')
