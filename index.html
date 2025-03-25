@@ -139,15 +139,15 @@
         <div class="contact-info">
           <div class="contact-item">
             <span class="translate" data-ru="Email:" data-en="Email:">Email:</span>
-            <a href="mailto:info@insteppe.com">info@insteppe.com</a>
+            <a href="mailto:nofrant1@gmail.com">nofrant1@gmail.com</a>
           </div>
           <div class="contact-item">
             <span class="translate" data-ru="Telegram:" data-en="Telegram:">Telegram:</span>
-            <a href="https://t.me/insteppe_team">@insteppe_team</a>
+            <a href="https://t.me/nofrant">@nofrant</a>
           </div>
           <div class="contact-item">
             <span class="translate" data-ru="LinkedIn:" data-en="LinkedIn:">LinkedIn:</span>
-            <a href="https://linkedin.com/company/insteppe">INSTEPPE</a>
+            <a href="https://www.linkedin.com/in/assen/">INSTEPPE</a>
           </div>
         </div>
         
@@ -168,5 +168,30 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Переключение языка
+    const langSwitcher = document.getElementById('lang-switch');
+    const elementsToTranslate = document.querySelectorAll('.translate');
+    
+    // Установка языка по умолчанию (английский)
+    let currentLang = 'en';
+    updateLanguage();
+
+    langSwitcher.addEventListener('click', function() {
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      updateLanguage();
+    });
+
+    function updateLanguage() {
+      elementsToTranslate.forEach(el => {
+        if (el.dataset[currentLang]) {
+          el.textContent = el.dataset[currentLang];
+        }
+      });
+      
+      // Обновляем текст кнопки переключения языка
+      langSwitcher.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+    }
+  </script>
 </body>
 </html>

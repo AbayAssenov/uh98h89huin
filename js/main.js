@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const langButtons = document.querySelectorAll('.lang-btn');
   const translatedElements = document.querySelectorAll('[data-ru], [data-en]');
   const inputFields = document.querySelectorAll('input, textarea');
-  let currentLanguage = 'ru';
+  let currentLanguage = 'en';
 
   // Инициализация языка
   setLanguage(currentLanguage);
