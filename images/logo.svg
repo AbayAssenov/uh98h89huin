@@ -1,18 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 60" width="250" height="60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
   <defs>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E2160" />
-      <stop offset="100%" stop-color="#1B75BC" />
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Звезда слева от текста -->
-  <path d="M18,30 L22,22 L30,21 L25,15 L27,8 L20,11 L15,6 L13,14 L6,16 L12,20 z" 
-        fill="#1B75BC" opacity="0.9" />
+  <!-- Фон с градиентом -->
+  <rect width="180" height="180" rx="40" fill="url(#grad)"/>
   
-  <!-- Текст INSTEPPE -->
-  <text x="45" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="30" fill="url(#textGradient)">INSTEPPE</text>
+  <!-- Буква I -->
+  <text x="90" y="130" font-family="Arial, sans-serif" font-size="100" font-weight="bold" text-anchor="middle" fill="white">I</text>
   
-  <!-- Подчеркивание -->
-  <rect x="45" y="42" width="195" height="2" rx="1" fill="#1B75BC" opacity="0.7" />
+  <!-- Звездочка в правом верхнем углу - БОЛЬШАЯ -->
+  <path d="M140,50 L145,35 L160,32 L150,20 L153,5 L140,12 L127,5 L130,20 L120,32 L135,35 z" 
+        fill="url(#starGrad)" stroke="white" stroke-width="2" opacity="1" />
 </svg> 
