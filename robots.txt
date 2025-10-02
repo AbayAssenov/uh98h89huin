@@ -3,8 +3,6 @@ Allow: /
 
 # Disallow unnecessary directories
 Disallow: /.git/
-Disallow: /.idea/
-Disallow: /.claude/
 Disallow: /js/
 Disallow: /styles/
 
