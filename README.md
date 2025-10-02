@@ -1,56 +1,66 @@
-# INSTEPPE
-Лендинг страница для компании INSTEPPE - независимой digital-команды из Казахстана, которая разрабатывает собственные цифровые продукты и технологические решения.
+# Insteppe Studio
 
-## Описание проекта
+Landing page for development studio.
 
-Одностраничный лендинг с минималистичным дизайном, адаптивной версткой и современным пользовательским интерфейсом.
+**Live Site:** [insteppe.com](https://insteppe.com)
 
-### Особенности
-- Минималистичный, современный дизайн с космическими элементами
-- Полностью адаптивная верстка
-- Мультиязычность (русский и английский языки)
-- Анимации элементов при скролле
-- Интерактивные космические элементы (звезды, планеты, ракета)
-- Форма обратной связи
-- Плавная навигация по странице
+## Description
 
-## Технологии
-- HTML5
-- CSS3 (с использованием CSS переменных)
-- JavaScript (ванильный)
-- Шрифт Inter от Google Fonts
-- Font Awesome для иконок
+Corporate landing page for Insteppe Studio, specializing in rapid MVP development (4-8 weeks), full-stack SaaS solutions, and equity partnerships with startups.
 
-### Стек технологий компании
-- React
-- Next.js
-- TypeScript
+## Features
+
+- Modern responsive design
+- SEO optimization (robots.txt, sitemap.xml, JSON-LD structured data)
+- Google Analytics 4 integration
+- Interactive animations and hover effects
+- Contact form integration
+- Mobile-first approach
+
+## Tech Stack
+
+- HTML5, CSS3, JavaScript
 - Tailwind CSS
-- iOS (Swift)
-- Android (Kotlin)
-- Java (Spring Boot)
-- PostgreSQL
-- Supabase
-- Node.js
-- AWS
-- Docker
-- GitHub Actions
-- OpenAI API
+- Google Fonts (Inter)
+- Lucide Icons
+- Google Analytics 4
 
-## Структура лендинга
-1. Hero-блок с основным слоганом и призывом к действию
-2. Секция "О нас" с описанием компании и принципами работы
-3. Секция "Продукты" с карточками текущих проектов
-4. Секция "Почему мы" с ключевыми преимуществами
-5. Контактная форма и информация для связи
-6. Футер с копирайтом
+## Project Structure
 
-## Мультиязычность
-Сайт поддерживает два языка:
-- Русский (по умолчанию)
-- Английский
+```
+landing/
+├── index.html              # Main page
+├── robots.txt              # SEO instructions
+├── sitemap.xml             # Site map
+├── CNAME                   # Domain configuration
+├── images/
+│   └── logo.svg            # Logo
+├── js/                     # JavaScript files
+└── styles/                 # CSS styles
+```
 
-Переключение между языками происходит мгновенно без перезагрузки страницы.
+## Development
 
-## Как запустить
-Просто откройте файл `index.html` в любом современном браузере. 
+```bash
+# Local development
+python3 -m http.server 8000
+
+# Open in browser
+open http://localhost:8000
+```
+
+## Deployment
+
+Configured for GitHub Pages with automatic deployment to insteppe.com.
+
+## SEO Configuration
+
+- Google Analytics 4: G-DZ9SGHDJ23
+- Structured data (Schema.org)
+- Optimized for search engines
+
+## Contact
+
+- Email: contact@insteppe.com
+- Telegram: @nofrant
+- Website: insteppe.com 
