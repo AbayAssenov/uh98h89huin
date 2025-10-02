@@ -3,194 +3,1354 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INSTEPPE</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <title>Insteppe Studio - We Build Products & MVPs for Startups</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'atlassian-blue': '#0052CC',
+            'atlassian-dark': '#172B4D',
+            'atlassian-light': '#F4F5F7'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    /* Custom Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(-180deg); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    /* Corporate Animation Classes */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .fade-in-up.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .section-animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .section-animate.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Floating Shapes */
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .shape {
+      position: absolute;
+      background: linear-gradient(45deg, #06b6d4, #8b5cf6);
+      border-radius: 50%;
+      opacity: 0.1;
+    }
+    
+    .shape-1 {
+      width: 120px;
+      height: 120px;
+      top: 15%;
+      left: 8%;
+      animation: float 6s ease-in-out infinite;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6, #10b981);
+      opacity: 0.15;
+    }
+    
+    .shape-2 {
+      width: 180px;
+      height: 180px;
+      top: 55%;
+      right: 8%;
+      animation: float-slow 8s ease-in-out infinite;
+      background: linear-gradient(45deg, #f59e0b, #ef4444, #8b5cf6);
+      opacity: 0.12;
+    }
+    
+    .shape-3 {
+      width: 100px;
+      height: 100px;
+      top: 35%;
+      left: 65%;
+      animation: float 5s ease-in-out infinite reverse;
+      background: linear-gradient(225deg, #10b981, #06b6d4, #f59e0b);
+      opacity: 0.18;
+    }
+    
+    .shape-4 {
+      width: 250px;
+      height: 250px;
+      top: 5%;
+      right: 25%;
+      animation: float-slow 10s ease-in-out infinite;
+      background: linear-gradient(315deg, #ef4444, #8b5cf6, #06b6d4);
+      opacity: 0.08;
+    }
+    
+    .shape-5 {
+      width: 140px;
+      height: 140px;
+      bottom: 15%;
+      left: 25%;
+      animation: float 7s ease-in-out infinite;
+      background: linear-gradient(180deg, #8b5cf6, #10b981, #f59e0b);
+      opacity: 0.14;
+    }
+    
+    /* Particles */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #06b6d4;
+      border-radius: 50%;
+      animation: float 3s linear infinite;
+    }
+    
+    /* Enhanced Service Cards */
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+    }
+    
+    .service-icon {
+      transition: all 0.3s ease;
+    }
+    
+    /* Glowing Effect */
+    .glow-on-hover {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .glow-on-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s;
+    }
+    
+    .glow-on-hover:hover::before {
+      left: 100%;
+    }
+    
+    /* Tech Stack Icons Animation */
+    .tech-icon {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    
+    .tech-icon:hover {
+      transform: translateY(-20px) rotate(10deg) scale(1.15);
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25));
+    }
+    
+    .tech-icon:hover .w-24 {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Mouse follower */
+    .mouse-follower {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #06b6d4, #8b5cf6);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.3s ease;
+      mix-blend-mode: difference;
+    }
+    
+    .mouse-follower.active {
+      opacity: 1;
+      transform: scale(2);
+    }
+    
+    /* Enhanced button animations */
+    .btn-magnetic {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    
+    .btn-magnetic:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Parallax elements */
+    .parallax-element {
+      transition: transform 0.1s ease-out;
+    }
+    
+    /* Magnetic effect for interactive elements */
+    .magnetic {
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    /* Corporate Animations */
+    .animated-grid {
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
+      animation: gridMove 20s ease-in-out infinite;
+    }
+    
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, 
+        rgba(6, 182, 212, 0.1) 0%, 
+        rgba(139, 92, 246, 0.1) 50%, 
+        rgba(16, 185, 129, 0.1) 100%);
+      animation: gradientShift 15s ease-in-out infinite;
+    }
+    
+    @keyframes gridMove {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      25% { transform: translateX(-20px) translateY(-10px); }
+      50% { transform: translateX(10px) translateY(-20px); }
+      75% { transform: translateX(-10px) translateY(10px); }
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.2; }
+    }
+    
+    /* Fade in animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Section animations */
+    .section-animate {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .section-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Card hover animations */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Pricing Cards */
+    .pricing-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    /* Floating Orbs Background Animation */
+    .floating-orbs {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+    
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.5;
+      animation: float-orb 12s infinite ease-in-out;
+      z-index: 5;
+    }
+    
+    .orb-1 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #06b6d4, #3b82f6);
+      top: 10%;
+      left: 10%;
+      animation-duration: 8s;
+      animation-delay: 0s;
+    }
+    
+    .orb-2 {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #8b5cf6, #a855f7);
+      top: 60%;
+      right: 15%;
+      animation-duration: 10s;
+      animation-delay: -1s;
+    }
+    
+    .orb-3 {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(225deg, #10b981, #06b6d4);
+      top: 80%;
+      left: 5%;
+      animation-duration: 12s;
+      animation-delay: -2s;
+    }
+    
+    .orb-4 {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(315deg, #f59e0b, #ef4444);
+      top: 20%;
+      right: 5%;
+      animation-duration: 9s;
+      animation-delay: -3s;
+    }
+    
+    .orb-5 {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      top: 40%;
+      left: 50%;
+      animation-duration: 11s;
+      animation-delay: -1.5s;
+    }
+    
+    .orb-6 {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(180deg, #06b6d4, #10b981);
+      top: 70%;
+      right: 40%;
+      animation-duration: 7s;
+      animation-delay: -2.5s;
+    }
+    
+    @keyframes float-orb {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.4;
+      }
+      25% {
+        transform: translateY(-80px) translateX(120px) scale(1.2);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-40px) translateX(-100px) scale(0.8);
+        opacity: 0.3;
+      }
+      75% {
+        transform: translateY(-120px) translateX(-80px) scale(1.1);
+        opacity: 0.5;
+      }
+    }
+    
+    .pricing-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body>
-  <div class="stars-container">
-    <div class="star star-1"></div>
-    <div class="star star-2"></div>
-    <div class="star star-3"></div>
-    <div class="star" style="top: 85%; left: 25%; width: 4px; height: 4px;"></div>
-    <div class="star" style="top: 45%; left: 55%; width: 5px; height: 5px;"></div>
-    <div class="star" style="top: 75%; left: 85%; width: 3px; height: 3px;"></div>
-    <div class="star" style="top: 15%; left: 65%; width: 4px; height: 4px;"></div>
-    <div class="star" style="top: 35%; left: 15%; width: 5px; height: 5px;"></div>
-    <div class="star" style="top: 55%; left: 30%; width: 6px; height: 6px;"></div>
-    <div class="star" style="top: 70%; left: 70%; width: 4px; height: 4px;"></div>
-    <div class="planet planet-1"></div>
-    <div class="planet planet-2"></div>
-    <div class="planet" style="top: 50%; right: 10%; width: 60px; height: 60px; background-color: #ff9d4d; box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 157, 77, 0.7);"></div>
-    <div class="rocket">
-      <i class="fas fa-rocket"></i>
-    </div>
-  </div>
-
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="#" class="logo">
-          <img src="images/logo.svg" alt="INSTEPPE" width="180">
-        </a>
-        <div class="nav-links">
-          <a href="#about" class="nav-link translate" data-ru="О нас" data-en="About Us">О нас</a>
-          <a href="#products" class="nav-link translate" data-ru="Продукты" data-en="Products">Продукты</a>
-          <a href="#why-us" class="nav-link translate" data-ru="Почему мы" data-en="Why Us">Почему мы</a>
-          <a href="#contact" class="nav-link translate" data-ru="Контакты" data-en="Contact Us">Контакты</a>
-          <div class="language-switcher">
-            <button class="lang-btn active" data-lang="ru">RU</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-          </div>
+<body class="bg-white text-atlassian-dark font-sans">
+  <!-- Mouse Follower -->
+  <div class="mouse-follower" id="mouseFollower"></div>
+  
+  <!-- Header -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-bold text-atlassian-blue">Insteppe Studio</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="text-atlassian-dark hover:text-atlassian-blue transition-colors">Services</a>
+          <a href="#products" class="text-atlassian-dark hover:text-atlassian-blue transition-colors">Products</a>
+          <a href="#process" class="text-atlassian-dark hover:text-atlassian-blue transition-colors">Process</a>
+          <a href="#cases" class="text-atlassian-dark hover:text-atlassian-blue transition-colors">Cases</a>
+          <a href="#contact" class="text-atlassian-dark hover:text-atlassian-blue transition-colors">Contact</a>
+          <a href="#contact" class="bg-atlassian-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors btn-magnetic magnetic inline-block text-center">
+            Discuss Project
+          </a>
         </div>
       </nav>
-      
-      <div class="hero">
-        <h1 class="translate" data-ru="Продуктовая компания. Создаем информационные системы." data-en="Product company. We build information systems.">Продуктовая компания. Создаем информационные системы.</h1>
-        <p class="subtitle translate" data-ru="Разрабатываем масштабируемые технологические решения для сложных бизнес-задач." data-en="We develop scalable technological solutions for complex business challenges.">Разрабатываем масштабируемые технологические решения для сложных бизнес-задач.</p>
-        <button class="cta-button translate" data-ru="Обсудить идею" data-en="Discuss an idea">Обсудить идею</button>
-      </div>
     </div>
   </header>
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="translate" data-ru="О нас" data-en="About Us">О нас</h2>
-      <p class="about-text translate" data-ru="INSTEPPE — это продуктовая компания, специализирующаяся на разработке информационных систем. Мы создаем собственные продукты на базе современных технологий." data-en="INSTEPPE is a product company specializing in information systems development. We create our own products based on modern technologies.">INSTEPPE — это продуктовая компания, специализирующаяся на разработке информационных систем. Мы создаем собственные продукты на базе современных технологий.</p>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <!-- Floating Animated Orbs -->
+    <div class="floating-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+      <div class="orb orb-5"></div>
+      <div class="orb orb-6"></div>
+    </div>
+    
+    <!-- Animated Background Grid -->
+    <div class="absolute inset-0">
+      <div class="animated-grid" id="animatedGrid"></div>
+      <div class="gradient-overlay"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 flex items-center justify-center min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-in-up" data-delay="0">
+            <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Insteppe Studio</span>
+            </h1>
+          </div>
+          <div class="fade-in-up" data-delay="200">
+            <p class="text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              We Build Digital Dreams. MVP in 4–8 weeks. Turn your startup ideas into reality with cutting-edge technology
+            </p>
+          </div>
+          <div class="fade-in-up" data-delay="400">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold card-hover shadow-2xl inline-block text-center">
+                <span class="relative z-10">Start Your Project</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <button class="border-2 border-gray-400 text-gray-400 px-8 py-4 rounded-xl text-lg font-semibold cursor-not-allowed opacity-50" disabled>
+                View Our Work (Coming Soon)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Products Section - Coming Soon -->
+  <section id="products" class="py-20 bg-gray-50 relative">
+    <div class="absolute inset-0 bg-gray-100"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-400 mb-4">Our Products</h2>
+        <p class="text-xl text-gray-400">
+          Innovation portfolio coming soon
+        </p>
+      </div>
       
-      <div class="principles">
-        <div class="principle">
-          <h3 class="translate" data-ru="Собственные продукты" data-en="Our Products">Собственные продукты</h3>
-          <p class="translate" data-ru="Разрабатываем и развиваем информационные системы для решения бизнес-задач." data-en="We develop and evolve information systems to solve business challenges.">Разрабатываем и развиваем информационные системы для решения бизнес-задач.</p>
+      <div class="grid lg:grid-cols-3 gap-8 blur-sm select-none pointer-events-none">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">████████ ████</h3>
+            <p class="text-gray-400 mb-4">
+              ████████████ ████████ ███ ██████ ████████ ████████████
+            </p>
+            <span class="px-3 py-1 bg-gray-200 text-gray-400 text-sm rounded-full">███</span>
+          </div>
         </div>
-        <div class="principle">
-          <h3 class="translate" data-ru="Стратегичность" data-en="Strategic Approach">Стратегичность</h3>
-          <p class="translate" data-ru="Строим решения с долгосрочной перспективой и развитием." data-en="We build solutions with long-term perspective and development.">Строим решения с долгосрочной перспективой и развитием.</p>
+        
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">████████</h3>
+            <p class="text-gray-400 mb-4">
+              ██████ ████████ █ ████████ ████████ ██████ ███ ████████
+            </p>
+            <span class="px-3 py-1 bg-gray-200 text-gray-400 text-sm rounded-full">████</span>
+          </div>
         </div>
-        <div class="principle">
-          <h3 class="translate" data-ru="Чистая инженерия" data-en="Pure Engineering">Чистая инженерия</h3>
-          <p class="translate" data-ru="Разрабатываем продукты на основе лучших практик и высоких стандартов." data-en="We develop products based on best practices and high standards.">Разрабатываем продукты на основе лучших практик и высоких стандартов.</p>
+        
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">██████</h3>
+            <p class="text-gray-400 mb-4">
+              ████████ ███ ███████████ AI █ ███████ ████████ ████████
+            </p>
+            <span class="px-3 py-1 bg-gray-200 text-gray-400 text-sm rounded-full">████</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg">
+          <i data-lucide="clock" class="w-5 h-5 text-gray-600 mr-2"></i>
+          <span class="text-gray-600 font-semibold">Coming Soon</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="products" class="products">
-    <div class="container">
-      <h2 class="translate" data-ru="Наши продукты" data-en="Our Products">Наши продукты</h2>
-      <div class="product-cards">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="images/logos/project_alpha.svg" alt="Project Alpha" class="product-logo">
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white section-animate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-atlassian-dark mb-4">Our Services</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Full development cycle from idea to production-ready product
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="service-card border border-gray-200 rounded-xl p-8 card-hover fade-in-up" data-delay="100">
+          <div class="service-icon w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
           </div>
-          <h3>Project Alpha</h3>
-          <p class="translate" data-ru="Инновационная платформа для управления цифровыми активами." data-en="Innovative platform for digital asset management.">Инновационная платформа для управления цифровыми активами.</p>
-          <span class="product-stage translate" data-ru="MVP" data-en="MVP">MVP</span>
+          <h3 class="text-xl font-semibold text-atlassian-dark mb-4">MVP in 4–8 weeks</h3>
+          <p class="text-gray-600 mb-6">
+            Rapid development of minimum viable products for hypothesis testing and market entry
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full">React</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full">Node.js</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full">PostgreSQL</span>
+          </div>
         </div>
         
-        <div class="product-card">
-          <div class="product-image">
-            <img src="images/logos/dataflow.svg" alt="DataFlow" class="product-logo">
+        <div class="service-card border border-gray-200 rounded-xl p-8 glow-on-hover magnetic fade-in-up" data-delay="200">
+          <div class="service-icon w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
           </div>
-          <h3>DataFlow</h3>
-          <p class="translate" data-ru="Система аналитики и обработки больших данных для бизнеса." data-en="Analytics and big data processing system for business.">Система аналитики и обработки больших данных для бизнеса.</p>
-          <span class="product-stage translate" data-ru="Beta" data-en="Beta">Beta</span>
+          <h3 class="text-xl font-semibold text-atlassian-dark mb-4">Equity Partnership</h3>
+          <p class="text-gray-600 mb-6">
+            Equity + Cash collaboration model. We invest in your project with our expertise and development resources
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm rounded-full">Java</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm rounded-full">Go</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm rounded-full">DevOps</span>
+          </div>
         </div>
         
-        <div class="product-card">
-          <div class="product-image">
-            <img src="images/logos/nexgen.svg" alt="NexGen" class="product-logo">
+        <div class="service-card border border-gray-200 rounded-xl p-8 glow-on-hover magnetic fade-in-up" data-delay="300">
+          <div class="service-icon w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="layers" class="w-6 h-6 text-white"></i>
           </div>
-          <h3>NexGen</h3>
-          <p class="translate" data-ru="Платформа для интеграции AI в рабочие процессы компаний." data-en="Platform for integrating AI into company workflows.">Платформа для интеграции AI в рабочие процессы компаний.</p>
-          <span class="product-stage translate" data-ru="Live" data-en="Live">Live</span>
+          <h3 class="text-xl font-semibold text-atlassian-dark mb-4">Full-Stack SaaS Solutions</h3>
+          <p class="text-gray-600 mb-6">
+            Complete SaaS platform development: from architecture to deployment and scaling
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-teal-100 text-green-700 text-sm rounded-full">AI</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-teal-100 text-green-700 text-sm rounded-full">Kubernetes</span>
+            <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-teal-100 text-green-700 text-sm rounded-full">AWS</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="why-us" class="why-us">
-    <div class="container">
-      <h2 class="translate" data-ru="Почему мы" data-en="Why Us">Почему мы</h2>
-      <div class="features">
-        <div class="feature">
-          <h3 class="translate" data-ru="Профессиональная разработка" data-en="Professional Development">Профессиональная разработка</h3>
-          <p class="translate" data-ru="Создаем комплексные информационные системы любой сложности." data-en="We build comprehensive information systems of any complexity.">Создаем комплексные информационные системы любой сложности.</p>
+  <!-- Process Section -->
+  <section id="process" class="py-20 bg-atlassian-light section-animate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-atlassian-dark mb-4">Development Process</h2>
+        <p class="text-xl text-gray-600">
+          Transparent process from idea to launch
+        </p>
+      </div>
+      
+      <div class="relative">
+        <div class="flex items-center justify-between mb-8">
+          <div class="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gray-300"></div>
+          <div class="hidden lg:block absolute top-8 left-0 h-0.5 bg-atlassian-blue process-line" style="width: 0%"></div>
         </div>
-        <div class="feature">
-          <h3 class="translate" data-ru="Инновационные решения" data-en="Innovative Solutions">Инновационные решения</h3>
-          <p class="translate" data-ru="Внедряем передовые технологии в наших продуктах." data-en="We implement cutting-edge technologies in our products.">Внедряем передовые технологии в наших продуктах.</p>
-        </div>
-        <div class="feature">
-          <h3 class="translate" data-ru="Полный цикл разработки" data-en="Full Development Cycle">Полный цикл разработки</h3>
-          <p class="translate" data-ru="От концепции и дизайна до поддержки готовых систем." data-en="From concept and design to support of ready systems.">От концепции и дизайна до поддержки готовых систем.</p>
+        
+        <div class="grid lg:grid-cols-5 gap-8">
+          <div class="text-center process-step fade-in-up" data-delay="100">
+            <div class="w-16 h-16 bg-atlassian-blue rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+              <i data-lucide="search" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-atlassian-dark mb-2">Discovery</h3>
+            <p class="text-gray-600 text-sm">Requirements analysis and technical planning</p>
+          </div>
+          
+          <div class="text-center process-step fade-in-up" data-delay="200">
+            <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+              <i data-lucide="palette" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-atlassian-dark mb-2">Design</h3>
+            <p class="text-gray-600 text-sm">UX/UI design and prototyping</p>
+          </div>
+          
+          <div class="text-center process-step fade-in-up" data-delay="300">
+            <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+              <i data-lucide="code" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-atlassian-dark mb-2">Development</h3>
+            <p class="text-gray-600 text-sm">Iterative development with weekly demos</p>
+          </div>
+          
+          <div class="text-center process-step fade-in-up" data-delay="400">
+            <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+              <i data-lucide="bug" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-atlassian-dark mb-2">Testing</h3>
+            <p class="text-gray-600 text-sm">Comprehensive testing and optimization</p>
+          </div>
+          
+          <div class="text-center process-step fade-in-up" data-delay="500">
+            <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+              <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-atlassian-dark mb-2">Launch</h3>
+            <p class="text-gray-600 text-sm">Deployment and support</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="translate" data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="translate" data-ru="Email:" data-en="Email:">Email:</span>
-            <a href="mailto:nofrant1@gmail.com">nofrant1@gmail.com</a>
+  <!-- Cases/Portfolio Section - Coming Soon -->
+  <section id="cases" class="py-20 bg-gray-50 relative section-animate">
+    <div class="absolute inset-0 bg-gray-100"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-400 mb-4">Case Studies</h2>
+        <p class="text-xl text-gray-400">
+          Our client success stories
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8 blur-sm select-none pointer-events-none">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
           </div>
-          <div class="contact-item">
-            <span class="translate" data-ru="Telegram:" data-en="Telegram:">Telegram:</span>
-            <a href="https://t.me/nofrant">@nofrant</a>
-          </div>
-          <div class="contact-item">
-            <span class="translate" data-ru="LinkedIn:" data-en="LinkedIn:">LinkedIn:</span>
-            <a href="https://www.linkedin.com/in/assen/">INSTEPPE</a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">████████ ████████</h3>
+            <p class="text-gray-400 mb-4">
+              ████: ███████ ██████████ ████████ ███ ██████-████████ █ ███████████ ████████ ██████
+            </p>
+            <p class="text-sm text-gray-400 mb-4">
+              ██████████: 300% ████ ████████, ████████ 10█+ ███████ █ ████
+            </p>
           </div>
         </div>
         
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="Ваше имя" data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Email" data-ru-placeholder="Email" data-en-placeholder="Email" required>
-          <textarea name="message" placeholder="Сообщение" data-ru-placeholder="Сообщение" data-en-placeholder="Message" required></textarea>
-          <button type="submit" class="submit-button translate" data-ru="Отправить" data-en="Send">Отправить</button>
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">████████ ███████</h3>
+            <p class="text-gray-400 mb-4">
+              ████: ██████████ ███ ██████████ ████████ ██ 6 ██████ ███ ████████ ████████
+            </p>
+            <p class="text-sm text-gray-400 mb-4">
+              ██████████: ██████████ $2M seed ██████, 50█+ ██████████
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden opacity-50">
+          <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+            <div class="text-white text-6xl font-bold">?</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-400 mb-3">██-█████████</h3>
+            <p class="text-gray-400 mb-4">
+              ████: ███████ SaaS ███ ████████████ ██████████████ █ ██-██████████
+            </p>
+            <p class="text-sm text-gray-400 mb-4">
+              ██████████: 80% ████████ ███████ ██ ████████ ███████████
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg">
+          <i data-lucide="clock" class="w-5 h-5 text-gray-600 mr-2"></i>
+          <span class="text-gray-600 font-semibold">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-20 bg-atlassian-light section-animate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-atlassian-dark mb-4">Technology Stack</h2>
+        <p class="text-xl text-gray-600">
+          Modern tools for building reliable solutions
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-12 items-center">
+        <a href="https://react.dev" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="100">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">React</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">React</span>
+        </a>
+        
+        <a href="https://nextjs.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="150">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">Next</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Next.js</span>
+        </a>
+        
+        <a href="https://golang.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="200">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">Go</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Go</span>
+        </a>
+        
+        <a href="https://oracle.com/java" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="250">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">Java</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Java</span>
+        </a>
+        
+        <a href="https://python.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="300">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">Py</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Python</span>
+        </a>
+        
+        <a href="https://postgresql.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="350">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">PG</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">PostgreSQL</span>
+        </a>
+        
+        <a href="https://docker.com" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="400">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-sm">Docker</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Docker</span>
+        </a>
+        
+        <a href="https://kubernetes.io" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="450">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">K8s</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Kubernetes</span>
+        </a>
+        
+        <a href="https://aws.amazon.com" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="500">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">AWS</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">AWS</span>
+        </a>
+        
+        <a href="https://nodejs.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="550">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-sm">Node</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Node.js</span>
+        </a>
+        
+        <a href="https://vuejs.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="600">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-sm">Vue</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Vue.js</span>
+        </a>
+        
+        <a href="https://tailwindcss.com" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="650">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-sm">Tail</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">Tailwind</span>
+        </a>
+        
+        <a href="https://typescriptlang.org" target="_blank" class="flex flex-col items-center tech-icon fade-in-up" data-delay="700">
+          <div class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl">
+            <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-sm">TS</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-gray-700">TypeScript</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-20 bg-white section-animate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-atlassian-dark mb-4">Collaboration Models</h2>
+        <p class="text-xl text-gray-600">
+          Choose the right format for your project
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="bg-white border-2 border-gray-200 rounded-xl p-8 fade-in-up" data-delay="100">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-atlassian-dark mb-2">Fixed Price</h3>
+            <p class="text-gray-600">Fixed project cost</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Clear timelines</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Detailed technical specifications</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Predictable budget</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Result guarantee</span>
+            </li>
+          </ul>
+          <div class="text-center">
+            <p class="text-sm text-gray-500 mb-4">Perfect for MVPs and small projects</p>
+            <a href="#contact" class="w-full bg-white border-2 border-atlassian-blue text-atlassian-blue py-3 rounded-lg hover:bg-atlassian-blue hover:text-white transition-colors inline-block text-center">
+              Discuss Project
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-atlassian-blue text-white border-2 border-atlassian-blue rounded-xl p-8 relative fade-in-up" data-delay="200">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+            Popular
+          </div>
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold mb-2">Time & Material</h3>
+            <p class="text-blue-100">Hourly billing</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-400 mr-3"></i>
+              <span>Flexibility in changes</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-400 mr-3"></i>
+              <span>Weekly reporting</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-400 mr-3"></i>
+              <span>Budget control</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-400 mr-3"></i>
+              <span>Iterative development</span>
+            </li>
+          </ul>
+          <div class="text-center">
+            <p class="text-sm text-blue-100 mb-4">For long-term projects</p>
+            <a href="#contact" class="w-full bg-white text-atlassian-blue py-3 rounded-lg hover:bg-gray-100 transition-colors inline-block text-center">
+              Start Working
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-gray-200 rounded-xl p-8 fade-in-up" data-delay="300">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-atlassian-dark mb-2">Equity + Cash</h3>
+            <p class="text-gray-600">Startup investment</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Equity participation</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Mentorship support</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Strategic partnership</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+              <span>Long-term development</span>
+            </li>
+          </ul>
+          <div class="text-center">
+            <p class="text-sm text-gray-500 mb-4">For promising startups</p>
+            <a href="#contact" class="w-full bg-white border-2 border-atlassian-blue text-atlassian-blue py-3 rounded-lg hover:bg-atlassian-blue hover:text-white transition-colors inline-block text-center">
+              Apply Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-atlassian-light section-animate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up" data-delay="0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-atlassian-dark mb-4">Contact Us</h2>
+        <p class="text-xl text-gray-600">
+          Let's discuss your project and find the best solution
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="fade-in-up" data-delay="100">
+          <h3 class="text-xl font-semibold text-atlassian-dark mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <i data-lucide="mail" class="w-5 h-5 text-atlassian-blue mr-3"></i>
+              <span>Email: </span>
+              <a href="mailto:contact@insteppe.com" class="text-atlassian-blue hover:underline ml-2">contact@insteppe.com</a>
+            </div>
+            <div class="flex items-center">
+              <i data-lucide="message-circle" class="w-5 h-5 text-atlassian-blue mr-3"></i>
+              <span>Telegram: </span>
+              <a href="https://t.me/nofrant" class="text-atlassian-blue hover:underline ml-2">@nofrant</a>
+            </div>
+            <div class="flex items-center opacity-50">
+              <i data-lucide="linkedin" class="w-5 h-5 text-gray-400 mr-3"></i>
+              <span class="text-gray-400">LinkedIn: </span>
+              <span class="text-gray-400 ml-2">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+        
+        <form class="bg-white p-8 rounded-xl shadow-sm fade-in-up" data-delay="200">
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-atlassian-dark mb-2">Your Name</label>
+              <input type="text" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-atlassian-blue focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-atlassian-dark mb-2">Email</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-atlassian-blue focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-atlassian-dark mb-2">Brief Project Description</label>
+              <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-atlassian-blue focus:border-transparent" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-atlassian-blue text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              Send Request
+            </button>
+          </div>
         </form>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p class="translate" data-ru="© INSTEPPE. 2025" data-en="© INSTEPPE. 2025">© INSTEPPE. 2025</p>
+  <!-- Footer -->
+  <footer class="bg-atlassian-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold text-white mb-4">Insteppe Studio</h3>
+          <p class="text-gray-300 mb-6 max-w-md">
+            We build products and MVPs for startups and corporations. Turn ideas into working solutions.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://t.me/nofrant" class="text-gray-300 hover:text-white transition-colors">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </a>
+            <div class="text-gray-500 opacity-50 cursor-not-allowed">
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </div>
+            <a href="mailto:contact@insteppe.com" class="text-gray-300 hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-white mb-4">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#process" class="text-gray-300 hover:text-white transition-colors">Process</a></li>
+            <li><a href="#cases" class="text-gray-300 hover:text-white transition-colors">Cases</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-white mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><span class="text-gray-300">MVP Development</span></li>
+            <li><span class="text-gray-300">SaaS Platforms</span></li>
+            <li><span class="text-gray-300">Equity Partnership</span></li>
+            <li><span class="text-gray-300">Technical Consulting</span></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-300">© 2025 Insteppe Studio. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
   <script>
-    // Переключение языка
-    const langSwitcher = document.getElementById('lang-switch');
-    const elementsToTranslate = document.querySelectorAll('.translate');
+    // Initialize Lucide icons
+    lucide.createIcons();
     
-    // Установка языка по умолчанию (английский)
-    let currentLang = 'en';
-    updateLanguage();
-
-    langSwitcher.addEventListener('click', function() {
-      currentLang = currentLang === 'ru' ? 'en' : 'ru';
-      updateLanguage();
-    });
-
-    function updateLanguage() {
-      elementsToTranslate.forEach(el => {
-        if (el.dataset[currentLang]) {
-          el.textContent = el.dataset[currentLang];
-        }
+    // Mouse follower
+    const mouseFollower = document.getElementById('mouseFollower');
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+    
+    // Update mouse position
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Update mouse follower position
+      mouseFollower.style.left = mouseX - 10 + 'px';
+      mouseFollower.style.top = mouseY - 10 + 'px';
+      
+      // Parallax effect for floating shapes
+      const shapes = document.querySelectorAll('.shape');
+      shapes.forEach((shape, index) => {
+        const speed = 0.02 + (index * 0.01);
+        const x = (mouseX * speed) - (window.innerWidth * speed) / 2;
+        const y = (mouseY * speed) - (window.innerHeight * speed) / 2;
+        shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * 0.1}deg)`;
       });
       
-      // Обновляем текст кнопки переключения языка
-      langSwitcher.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+      // No letter particles animation needed anymore
+    });
+    
+    // Show mouse follower on interactive elements
+    const interactiveElements = document.querySelectorAll('button, a, .tech-icon, .service-card');
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        mouseFollower.classList.add('active');
+      });
+      element.addEventListener('mouseleave', () => {
+        mouseFollower.classList.remove('active');
+      });
+    });
+    
+    // Magnetic effect for buttons
+    const magneticElements = document.querySelectorAll('.magnetic');
+    magneticElements.forEach(element => {
+      element.addEventListener('mousemove', (e) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        element.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        element.style.transform = 'translate(0px, 0px) scale(1)';
+      });
+    });
+    
+    // Corporate Animation Controller
+    class AnimationController {
+      constructor() {
+        this.observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        this.init();
+      }
+      
+      init() {
+        this.setupScrollAnimations();
+        this.setupHoverEffects();
+      }
+      
+      setupScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const delay = entry.target.dataset.delay || 0;
+              setTimeout(() => {
+                entry.target.classList.add('animate-in');
+              }, parseInt(delay));
+            }
+          });
+        }, this.observerOptions);
+        
+        // Observe all elements with fade-in-up class
+        const animatedElements = document.querySelectorAll('.fade-in-up');
+        animatedElements.forEach(element => {
+          observer.observe(element);
+        });
+        
+        // Observe sections with section-animate class
+        const sections = document.querySelectorAll('.section-animate');
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      }
+      
+      setupHoverEffects() {
+        // Enhanced tech icon hover effects
+        const techIcons = document.querySelectorAll('.tech-icon');
+        techIcons.forEach(icon => {
+          icon.addEventListener('mouseenter', () => {
+            icon.style.transform = 'translateY(-10px) scale(1.1)';
+            icon.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          });
+          icon.addEventListener('mouseleave', () => {
+            icon.style.transform = 'translateY(0) scale(1)';
+          });
+        });
+        
+        // Service card hover effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '';
+          });
+        });
+      }
+    }
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Process timeline animation
+    const processSteps = document.querySelectorAll('.process-step');
+    const processLine = document.querySelector('.process-line');
+    
+    function animateProcess() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const steps = entry.target.querySelectorAll('.process-step');
+            let currentStep = 0;
+            
+            const animateStep = () => {
+              if (currentStep < steps.length) {
+                const step = steps[currentStep];
+                const circle = step.querySelector('div');
+                
+                // Animate circle
+                circle.classList.remove('bg-gray-300');
+                circle.classList.add('bg-atlassian-blue');
+                
+                // Animate progress line
+                if (processLine) {
+                  const progress = ((currentStep + 1) / steps.length) * 100;
+                  processLine.style.width = `${progress}%`;
+                }
+                
+                currentStep++;
+                setTimeout(animateStep, 500);
+              }
+            };
+            
+            setTimeout(animateStep, 500);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      const processSection = document.querySelector('#process');
+      if (processSection) {
+        observer.observe(processSection);
+      }
+    }
+
+    // Initialize animations when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize corporate animation controller
+      const animationController = new AnimationController();
+      
+      // Initialize process timeline animation
+      animateProcess();
+    });
+
+    // Form submission handler
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Create mailto link with form data
+        const subject = `New request from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:contact@insteppe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        const button = this.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+        button.textContent = 'Sent!';
+        button.style.backgroundColor = '#10B981';
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.backgroundColor = '';
+          this.reset();
+        }, 3000);
+      });
     }
   </script>
 </body>
