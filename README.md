@@ -61,6 +61,6 @@ Configured for GitHub Pages with automatic deployment to insteppe.com.
 
 ## Contact
 
-- Email: contact@insteppe.com
+- Email: hello@insteppe.com
 - Telegram: @nofrant
 - Website: insteppe.com 
