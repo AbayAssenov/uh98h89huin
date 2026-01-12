@@ -244,6 +244,7 @@ a {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
   padding: 1.5rem;
   box-shadow: 0 20px 45px rgba(2, 4, 13, 0.55);
+  word-break: break-word;
 }
 
 .brand-mini-label {
