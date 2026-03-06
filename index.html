@@ -262,7 +262,7 @@
 
     <section id="contact" class="brand-container brand-section-wrapper">
       <div class="brand-section brand-section-light">
-        <div class="brand-section-header">
+        <div class="brand-section-header" id="contact-header">
           <span class="brand-badge" data-i18n="nav.contact">Контакты</span>
           <h2 data-i18n="contact.title">Контакты</h2>
           <p data-i18n="contact.description">Опишите задачу в нескольких предложениях — вернёмся с идеями и планом запуска.</p>
@@ -272,11 +272,32 @@
           <input type="email" name="email" required placeholder="Email" data-i18n-placeholder="contact.form.email" />
           <input type="text" name="subject" class="full-width" placeholder="Тема" data-i18n-placeholder="contact.form.subject" />
           <textarea name="message" rows="4" class="full-width" required placeholder="Сообщение" data-i18n-placeholder="contact.form.message"></textarea>
+          
+          <!-- Simple Captcha -->
+          <div class="captcha-container" style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
+            <span data-i18n="contact.captcha">Сколько будет <span id="captcha-question"></span>?</span>
+            <input type="number" id="captcha-answer" required style="width: 80px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="?" />
+          </div>
+          
           <button type="submit" class="brand-button full-width brand-button-inline">
             <span data-i18n="contact.button">Отправить сообщение</span>
             <i data-lucide="arrow-right" class="brand-icon"></i>
           </button>
         </form>
+        
+        <!-- Success message (hidden by default) -->
+        <div id="success-message" style="display: none; text-align: center; padding: 2rem; background: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 8px; margin-top: 1rem;">
+          <div style="color: #0ea5e9; font-size: 3rem; margin-bottom: 1rem;">✓</div>
+          <h3 style="color: #0ea5e9; margin-bottom: 0.5rem;" data-i18n="contact.success.title">Сообщение отправлено!</h3>
+          <p style="margin: 0;" data-i18n="contact.success.text">Спасибо за обращение! Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+        
+        <!-- Error message (hidden by default) -->
+        <div id="error-message" style="display: none; text-align: center; padding: 1.5rem; background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; margin-top: 1rem;">
+          <div style="color: #ef4444; font-size: 2rem; margin-bottom: 0.5rem;">⚠</div>
+          <h4 style="color: #ef4444; margin-bottom: 0.5rem;" data-i18n="contact.error.title">Ошибка проверки</h4>
+          <p style="margin: 0;" data-i18n="contact.error.text">Неверный ответ на математический вопрос. Попробуйте снова.</p>
+        </div>
         <div class="brand-contact-info">
           <span class="brand-inline">
             <i data-lucide="mail" class="brand-icon"></i>
@@ -379,6 +400,11 @@
         'contact.form.subject': 'Тема',
         'contact.form.message': 'Сообщение',
         'contact.button': 'Отправить сообщение',
+        'contact.captcha': 'Сколько будет <span id="captcha-question"></span>?',
+        'contact.success.title': 'Сообщение отправлено!',
+        'contact.success.text': 'Спасибо за обращение! Мы свяжемся с вами в ближайшее время.',
+        'contact.error.title': 'Ошибка проверки',
+        'contact.error.text': 'Неверный ответ на математический вопрос. Попробуйте снова.',
         'footer.copyright': '© 2025–2026 Insteppe. Все права защищены.',
         'footer.privacy': 'Конфиденциальность',
         'footer.terms': 'Условия',
@@ -449,6 +475,11 @@
         'contact.form.subject': 'Subject',
         'contact.form.message': 'Message',
         'contact.button': 'Send message',
+        'contact.captcha': 'What is <span id="captcha-question"></span>?',
+        'contact.success.title': 'Message sent!',
+        'contact.success.text': 'Thank you for reaching out! We will contact you shortly.',
+        'contact.error.title': 'Verification Error',
+        'contact.error.text': 'Incorrect answer to the math question. Please try again.',
         'footer.copyright': '© 2025–2026 Insteppe. All rights reserved.',
         'footer.privacy': 'Privacy',
         'footer.terms': 'Terms',
@@ -501,16 +532,82 @@
       en: { name: 'Name', email: 'Email', subject: 'Project request' }
     };
 
+    // Captcha variables
+    let captchaAnswer = 0;
+    
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      captchaAnswer = num1 + num2;
+      document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
+    }
+    
+    // Generate captcha on page load
+    generateCaptcha();
+
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
+      
+      // Check captcha
+      const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+      if (userAnswer !== captchaAnswer) {
+        // Show error message
+        document.getElementById('error-message').style.display = 'block';
+        generateCaptcha();
+        document.getElementById('captcha-answer').value = '';
+        
+        // Hide error message after 4 seconds
+        setTimeout(() => {
+          document.getElementById('error-message').style.display = 'none';
+        }, 4000);
+        
+        return;
+      }
+      
       const formData = new FormData(event.target);
       const name = formData.get('name');
       const email = formData.get('email');
-      const subjectValue = formData.get('subject') || formLabels[currentLang].subject;
+      const subject = formData.get('subject') || formLabels[currentLang].subject;
       const message = formData.get('message');
-      const body = `${formLabels[currentLang].name}: ${name}\n${formLabels[currentLang].email}: ${email}\n\n${message}`;
-      window.location.href = `mailto:hello@insteppe.com?subject=${encodeURIComponent(subjectValue)}&body=${encodeURIComponent(body)}`;
-      event.target.reset();
+
+      // Disable form during submission
+      const form = event.target;
+      const button = form.querySelector('button[type="submit"]');
+      const inputs = form.querySelectorAll('input, textarea, button');
+      
+      inputs.forEach(input => input.disabled = true);
+      button.innerHTML = currentLang === 'ru' ? 
+        '<span>Отправляем...</span>' : 
+        '<span>Sending...</span>';
+
+      // Google Forms submission
+      const googleFormData = new FormData();
+      googleFormData.append('entry.235762051', name);
+      googleFormData.append('entry.1520040868', email);
+      googleFormData.append('entry.733062920', subject);
+      googleFormData.append('entry.310541831', message);
+
+      // Submit to Google Forms
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSfAzbVfDF0_O_Zub5tLJp2UrSZ2-D78YeOY4IHqy90lhfX9Gg/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: googleFormData
+      }).then(() => {
+        // Hide form header description and form itself
+        document.getElementById('contact-header').querySelector('p[data-i18n="contact.description"]').style.display = 'none';
+        form.style.display = 'none';
+        
+        // Show success message
+        document.getElementById('success-message').style.display = 'block';
+      }).catch(() => {
+        // Re-enable form and fallback to email
+        inputs.forEach(input => input.disabled = false);
+        button.innerHTML = `<span data-i18n="contact.button">${translations[currentLang]['contact.button']}</span><i data-lucide="arrow-right" class="brand-icon"></i>`;
+        lucide.createIcons();
+        
+        const body = `${formLabels[currentLang].name}: ${name}\n${formLabels[currentLang].email}: ${email}\n\n${message}`;
+        window.location.href = `mailto:hello@insteppe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
     });
   </script>
 </body>
