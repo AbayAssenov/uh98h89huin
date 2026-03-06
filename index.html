@@ -273,10 +273,16 @@
           <input type="text" name="subject" class="full-width" placeholder="Тема" data-i18n-placeholder="contact.form.subject" />
           <textarea name="message" rows="4" class="full-width" required placeholder="Сообщение" data-i18n-placeholder="contact.form.message"></textarea>
           
-          <!-- Simple Captcha -->
-          <div class="captcha-container" style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
-            <span data-i18n="contact.captcha">Сколько будет <span id="captcha-question"></span>?</span>
-            <input type="number" id="captcha-answer" required style="width: 80px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="?" />
+          <!-- Visual Captcha -->
+          <div class="captcha-container" style="padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #0ea5e9; border-radius: 8px; margin: 1rem 0; text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 1rem; font-weight: 500; color: #0369a1;">
+              <div style="background: #fff; padding: 0.6rem 0.8rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); min-width: 40px;" id="num1">?</div>
+              <div style="font-size: 1.2rem; color: #0ea5e9;" id="operator">+</div>
+              <div style="background: #fff; padding: 0.6rem 0.8rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); min-width: 40px;" id="num2">?</div>
+              <div style="font-size: 1.2rem; color: #0ea5e9;">=</div>
+              <input type="number" id="captcha-answer" required style="width: 60px; padding: 0.6rem; border: 1px solid #0ea5e9; border-radius: 6px; text-align: center; font-size: 1rem; font-weight: 500;" placeholder="?" />
+            </div>
+            <div style="margin-top: 0.3rem; font-size: 0.8rem; color: #0369a1;" data-i18n="contact.captcha.help">Решите простой пример</div>
           </div>
           
           <button type="submit" class="brand-button full-width brand-button-inline">
@@ -405,6 +411,7 @@
         'contact.success.text': 'Спасибо за обращение! Мы свяжемся с вами в ближайшее время.',
         'contact.error.title': 'Ошибка проверки',
         'contact.error.text': 'Неверный ответ на математический вопрос. Попробуйте снова.',
+        'contact.captcha.help': 'Решите простой пример',
         'footer.copyright': '© 2025–2026 Insteppe. Все права защищены.',
         'footer.privacy': 'Конфиденциальность',
         'footer.terms': 'Условия',
@@ -480,6 +487,7 @@
         'contact.success.text': 'Thank you for reaching out! We will contact you shortly.',
         'contact.error.title': 'Verification Error',
         'contact.error.text': 'Incorrect answer to the math question. Please try again.',
+        'contact.captcha.help': 'Solve the simple math problem',
         'footer.copyright': '© 2025–2026 Insteppe. All rights reserved.',
         'footer.privacy': 'Privacy',
         'footer.terms': 'Terms',
@@ -538,8 +546,25 @@
     function generateCaptcha() {
       const num1 = Math.floor(Math.random() * 10) + 1;
       const num2 = Math.floor(Math.random() * 10) + 1;
-      captchaAnswer = num1 + num2;
-      document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
+      const operations = ['+', '-'];
+      const operation = operations[Math.random() > 0.5 ? 0 : 1];
+      
+      if (operation === '+') {
+        captchaAnswer = num1 + num2;
+      } else {
+        // Ensure positive result for subtraction
+        const bigger = Math.max(num1, num2);
+        const smaller = Math.min(num1, num2);
+        captchaAnswer = bigger - smaller;
+        document.getElementById('num1').textContent = bigger;
+        document.getElementById('num2').textContent = smaller;
+        document.getElementById('operator').textContent = '-';
+        return;
+      }
+      
+      document.getElementById('num1').textContent = num1;
+      document.getElementById('num2').textContent = num2;
+      document.getElementById('operator').textContent = operation;
     }
     
     // Generate captcha on page load
