@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insteppe Studio - full-cycle web & mobile product development</title>
-  <meta name="description" content="Insteppe Studio designs, builds, and supports web & mobile products ready for production from day one." />
+  <title>Insteppe Studio - Senior product team. Kazakhstan.</title>
+  <meta name="description" content="The senior team founders and CTOs hire when middle-level studios stop being enough. Web &amp; mobile products from discovery to scale." />
   <meta name="keywords" content="Insteppe, full-cycle development, web, mobile, Java, React, Flutter, Kazakhstan" />
   <meta name="author" content="Insteppe Studio" />
   <link rel="canonical" href="https://insteppe.com/" />
@@ -32,52 +32,12 @@
     "logo": "https://insteppe.com/logo.png",
     "description": "Insteppe Studio is a technology partner for web and mobile products: architecture, development, and production support.",
     "foundingDate": "2025-01-01",
-    "sameAs": [
-      "https://t.me/nofrant"
-    ],
+    "sameAs": ["https://t.me/nofrant"],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "business",
       "email": "hello@insteppe.com",
       "availableLanguage": ["English", "Russian"]
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Insteppe Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Full-cycle development",
-            "description": "Architecture, backend, and frontend for web & mobile products"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Product & BA",
-            "description": "Discovery, roadmap ownership, release and KPI management"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "QA & DevOps",
-            "description": "Automation, CI/CD, monitoring, and operations"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Technical partnership",
-            "description": "Scaling production workloads, support, and feature growth"
-          }
-        }
-      ]
     },
     "areaServed": "Worldwide",
     "email": "hello@insteppe.com"
@@ -86,280 +46,346 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles/brand.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="brand-shell">
-  <header class="brand-header">
-    <div class="brand-container brand-header-shell">
-      <div class="brand-logo-overlay">
-        <a href="#home" aria-label="Insteppe Studio">
-          <img src="/logo_light.jpg" alt="Insteppe Studio" />
-        </a>
-      </div>
-      <div class="brand-menu-row">
-        <nav class="brand-nav">
-          <a href="#team" data-i18n="nav.team">Команда</a>
-          <a href="#approach" data-i18n="nav.approach">Подход</a>
-          <a href="#cases" data-i18n="nav.cases">Кейсы</a>
-          <a href="#contact" data-i18n="nav.contact">Контакты</a>
-        </nav>
-        <div class="brand-header-actions">
-          <div class="brand-lang">
-            <button data-lang-btn="ru">RU</button>
-            <button data-lang-btn="en">EN</button>
-          </div>
-          <a href="#contact" class="brand-cta">
-            <span data-i18n="header.cta">Обсудить задачу</span>
-            <i data-lucide="arrow-right" class="brand-icon"></i>
-          </a>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#home" aria-label="Insteppe Studio" class="header-logo">
+        <img src="/logo_light.jpg" alt="Insteppe Studio" />
+      </a>
+      <nav class="header-nav">
+        <a href="#team"     data-i18n="nav.team">Team</a>
+        <a href="#approach" data-i18n="nav.approach">Approach</a>
+        <a href="#cases"    data-i18n="nav.cases">Cases</a>
+        <a href="#contact"  data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button data-lang-btn="ru">RU</button>
+          <button data-lang-btn="en">EN</button>
         </div>
+        <a href="#contact" class="btn btn-primary">
+          <span data-i18n="header.cta">Discuss a project</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="brand-container brand-hero-wrap">
-      <div class="brand-hero">
-        <div class="brand-hero-logo" aria-hidden="true">
-          <img src="/logo long .jpg" alt="" />
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-badge" data-i18n="hero.tagline">Senior product studio · Almaty &amp; Astana</div>
+      <h1 class="hero-title" data-i18n="hero.heading">The senior team behind products that <span class="gradient-text">ship and scale</span></h1>
+      <p class="hero-sub" data-i18n="hero.description">
+        We're the team founders and CTOs hire when middle-level studios stop being enough. Architecture, engineering, QA automation, and DevOps under one roof.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <span data-i18n="header.cta">Discuss a project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H20M14 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#cases" class="btn btn-ghost btn-lg">
+          <span data-i18n="hero.cases_btn">See our work</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong data-i18n="hero.stat1.title">10+ лет</strong>
+          <span data-i18n="hero.stat1.text">средний опыт каждого senior'а</span>
         </div>
-        <span class="brand-badge" data-i18n="hero.tagline">Технический партнёр бизнеса</span>
-        <h1 class="brand-title" data-i18n="hero.heading">Разработка web и mobile продуктов под ключ</h1>
-        <p class="brand-lead" data-i18n="hero.description">
-          Одна технологичная команда ведёт проект от discovery до production: архитектура, разработка, QA и DevOps. Продукты стабильно работают, масштабируются и поддерживаются долгосрочно.
-        </p>
-        <div class="brand-metrics" style="margin-top: 1.8rem;">
-          <article class="brand-card">
-            <p class="metric-title" data-i18n="hero.stat1.title">10+ лет</p>
-            <p class="metric-text" data-i18n="hero.stat1.text">опыта enterprise и стартапов</p>
-          </article>
-          <article class="brand-card">
-            <p class="metric-title" data-i18n="hero.stat2.title">Senior ядро</p>
-            <p class="metric-text" data-i18n="hero.stat2.text">архитекторы и лиды внутри команды</p>
-          </article>
-          <article class="brand-card">
-            <p class="metric-title" data-i18n="hero.stat3.title">Ответственность</p>
-            <p class="metric-text" data-i18n="hero.stat3.text">берём на себя результат и сроки</p>
-          </article>
-          <article class="brand-card">
-            <p class="metric-title" data-i18n="hero.stat4.title">С 2025</p>
-            <p class="metric-text" data-i18n="hero.stat4.text">год основания Insteppe Studio</p>
-          </article>
+        <div class="hero-stat">
+          <strong data-i18n="hero.stat2.title">70% senior</strong>
+          <span data-i18n="hero.stat2.text">engineers, architects &amp; QA leads</span>
+        </div>
+        <div class="hero-stat">
+          <strong data-i18n="hero.stat3.title">3 продукта</strong>
+          <span data-i18n="hero.stat3.text">уже работают в production</span>
+        </div>
+        <div class="hero-stat">
+          <strong data-i18n="hero.stat4.title">Ex-enterprise</strong>
+          <span data-i18n="hero.stat4.text">основана senior-инженерами из крупных компаний</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ── WHO WE WORK WITH ──────────────────────────────── -->
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label" data-i18n="who.label">Who we work with</span>
+          <h2 data-i18n="who.title">Built for founders and CTOs who need more than a vendor</h2>
+          <p data-i18n="who.sub">We're not a body shop. We're the team you bring in when the product needs to be done right.</p>
+        </div>
+        <div class="cards-grid-3">
+          <div class="card card-bg">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="15" width="4.5" height="6" rx="0.75" fill="currentColor" fill-opacity="0.38"/><rect x="9.75" y="10" width="4.5" height="11" rx="0.75" fill="currentColor" fill-opacity="0.68"/><rect x="16.5" y="5" width="4.5" height="16" rx="0.75" fill="currentColor"/></svg></div>
+            <h3 data-i18n="who.item1.title">SaaS Founders</h3>
+            <p data-i18n="who.item1.text">Building beyond MVP and need a senior team that thinks in products, not just tickets.</p>
+          </div>
+          <div class="card card-bg">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" fill="currentColor" fill-opacity="0.22"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/><line x1="12" y1="8.5" x2="12" y2="6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="15.5" x2="12" y2="17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="10.2" y1="11" x2="8.2" y2="9.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13.8" y1="11" x2="15.8" y2="9.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <h3 data-i18n="who.item2.title">CTOs &amp; Tech Leads</h3>
+            <p data-i18n="who.item2.text">Replacing a patchwork of freelancers with one accountable team that owns the full stack.</p>
+          </div>
+          <div class="card card-bg">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3L21 12L12 21L3 12L12 3Z" fill="currentColor" fill-opacity="0.28"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg></div>
+            <h3 data-i18n="who.item3.title">Central Asian Businesses</h3>
+            <p data-i18n="who.item3.text">Companies in Kazakhstan and the region ready for a senior local team with global product standards.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="team" class="brand-container brand-section-wrapper">
-      <div class="brand-section">
-        <div class="brand-section-header">
-          <span class="brand-badge" data-i18n="nav.team">Команда</span>
-          <h2 data-i18n="team.title">Команда полного цикла</h2>
-          <p data-i18n="team.description">Работаем одной командой без зависимости от внешних подрядчиков и закрываем весь цикл продукта - от аналитики до эксплуатации.</p>
+    <!-- ── TEAM ───────────────────────────────────────────── -->
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="nav.team">Team</span>
+          <h2 data-i18n="team.title">Full-cycle team</h2>
+          <p data-i18n="team.description">A single squad, no external vendors. We cover the entire product cycle - from business analysis to operations.</p>
         </div>
-        <div class="brand-grid-2 brand-section-spacer">
-          <article class="brand-card">
-            <h3 data-i18n="team.composition.title">Состав команды</h3>
-            <ul class="brand-list" style="margin-top: 1rem;">
-              <li data-i18n="team.composition.item1">3 Senior Java Engineers (архитектура, high-load, leadership)</li>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3" fill="currentColor"/><circle cx="5.5" cy="18" r="2.5" fill="currentColor" fill-opacity="0.7"/><circle cx="18.5" cy="18" r="2.5" fill="currentColor" fill-opacity="0.7"/><rect x="11.25" y="8" width="1.5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.55"/><rect x="5.5" y="12.75" width="13" height="1.5" rx="0.5" fill="currentColor" fill-opacity="0.55"/><rect x="11.25" y="12.75" width="1.5" height="2" rx="0.5" fill="currentColor" fill-opacity="0.55"/></svg></div>
+            <h3 data-i18n="team.composition.title">Team composition</h3>
+            <ul>
+              <li data-i18n="team.composition.item1">3 Senior Java Engineers (architecture, high-load, leadership)</li>
               <li data-i18n="team.composition.item2">2 Middle Software Engineers</li>
               <li data-i18n="team.composition.item3">2 QA Automation Engineers</li>
               <li data-i18n="team.composition.item4">Product Manager + Senior Business Analyst</li>
               <li data-i18n="team.composition.item5">UI/UX Designer</li>
               <li data-i18n="team.composition.item6">DevOps Engineer</li>
             </ul>
-          </article>
-          <article class="brand-card">
-            <h3 data-i18n="team.benefits.title">Что получает заказчик</h3>
-            <ul class="brand-list" style="margin-top: 1rem;">
-              <li data-i18n="team.benefits.item1">Стабильные релизы без хаоса</li>
-              <li data-i18n="team.benefits.item2">Предсказуемые сроки и roadmap</li>
-              <li data-i18n="team.benefits.item3">Контроль качества через автоматизацию</li>
-              <li data-i18n="team.benefits.item4">Готовность к росту нагрузки</li>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9.5 3H14.5L21 9.5V14.5L14.5 21H9.5L3 14.5V9.5L9.5 3Z" fill="currentColor" fill-opacity="0.25"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="team.benefits.title">What clients get</h3>
+            <ul>
+              <li data-i18n="team.benefits.item1">Stable releases without chaos</li>
+              <li data-i18n="team.benefits.item2">Predictable timelines and roadmap</li>
+              <li data-i18n="team.benefits.item3">Quality control through automation</li>
+              <li data-i18n="team.benefits.item4">Capacity for traffic and load growth</li>
             </ul>
-          </article>
+          </div>
         </div>
-        <a href="#contact" class="brand-cta" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-          <span data-i18n="team.cta">Обсудить проект</span>
-          <i data-lucide="chevron-right" class="brand-icon"></i>
-        </a>
+        <div class="mt-md">
+          <a href="#contact" class="btn btn-primary">
+            <span data-i18n="team.cta">Talk with the team</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H20M14 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="approach" class="brand-container brand-section-wrapper">
-      <div class="brand-section">
-        <div class="brand-section-header">
-          <span class="brand-badge" data-i18n="nav.approach">Подход</span>
-          <h2 data-i18n="approach.title">Production-ready подход</h2>
-          <p data-i18n="approach.description">Используем проверенный стек и процессы, чтобы первый релиз уже выдерживал реальную эксплуатацию.</p>
+    <!-- ── APPROACH ───────────────────────────────────────── -->
+    <section id="approach" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="nav.approach">Approach</span>
+          <h2 data-i18n="approach.title">Production-ready approach</h2>
+          <p data-i18n="approach.description">Proven stack and processes so the very first release survives real usage.</p>
         </div>
-        <div class="brand-grid-2 brand-section-spacer">
-          <article class="brand-card">
-            <div class="brand-mini-label" data-i18n="approach.stack.badge">Стек</div>
-            <h3 style="margin-top: 0.5rem;" data-i18n="approach.stack.title">Backend, frontend, mobile</h3>
-            <ul class="brand-list" style="margin-top: 1rem;">
+        <div class="cards-grid">
+          <div class="card card-bg">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="4.5" rx="1" fill="currentColor"/><rect x="2" y="10" width="20" height="4.5" rx="1" fill="currentColor" fill-opacity="0.62"/><rect x="2" y="16" width="20" height="4.5" rx="1" fill="currentColor" fill-opacity="0.32"/></svg></div>
+            <div class="card-label" data-i18n="approach.stack.badge">Stack</div>
+            <h3 data-i18n="approach.stack.title">Backend, frontend, mobile</h3>
+            <ul>
               <li data-i18n="approach.stack.item1">Backend: Java, Go</li>
               <li data-i18n="approach.stack.item2">Frontend: React, TypeScript, Angular</li>
               <li data-i18n="approach.stack.item3">Mobile: Flutter, React Native (iOS / Android)</li>
             </ul>
-          </article>
-          <article class="brand-card">
-            <div class="brand-mini-label" data-i18n="approach.process.badge">Процессы</div>
-            <h3 style="margin-top: 0.5rem;" data-i18n="approach.process.title">DevOps & эксплуатация</h3>
-            <ul class="brand-list" style="margin-top: 1rem;">
-              <li data-i18n="approach.process.item1">CI/CD, автоматизация деплойментов</li>
-              <li data-i18n="approach.process.item2">Мониторинг, логирование, безопасность</li>
-              <li data-i18n="approach.process.item3">Инфраструктура как код, отказоустойчивость</li>
-            </ul>
-            <p class="brand-lead" style="margin-top: 1rem;" data-i18n="approach.process.note">Продукты готовы к реальной эксплуатации с первого релиза.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cases" class="brand-container brand-section-wrapper">
-      <div class="brand-section-alt">
-        <div class="brand-section-header">
-          <span class="brand-badge" data-i18n="nav.cases">Кейсы</span>
-          <h2 data-i18n="cases.title">Реальные продукты</h2>
-          <p data-i18n="cases.description">Берём ответственность за запуск и поддержку - ниже проекты, которые уже работают.</p>
-        </div>
-        <div class="brand-grid-2 brand-section-spacer">
-          <article class="brand-card">
-            <div class="brand-mini-label" data-i18n="cases.restio.category">HoReCa</div>
-            <h3 style="margin-top: 0.5rem;">Restio</h3>
-            <p class="brand-lead" style="margin-top: 0.75rem;" data-i18n="cases.restio.text">Сервис бронирования для ресторанов и кофеен. Архитектура под высокую нагрузку, стабильные релизы.</p>
-            <a href="https://restio.info" target="_blank" class="brand-case-link">
-              restio.info
-              <i data-lucide="arrow-up-right" class="brand-icon"></i>
-            </a>
-          </article>
-          <article class="brand-card">
-            <div class="brand-mini-label" data-i18n="cases.fastfit.category">SaaS</div>
-            <h3 style="margin-top: 0.5rem;">FastFit Resume</h3>
-            <p class="brand-lead" style="margin-top: 0.75rem;" data-i18n="cases.fastfit.text">Международный SaaS Resume Builder: web, подписки, аналитика и поддержка.</p>
-            <a href="https://fastfitresume.com" target="_blank" class="brand-case-link">
-              fastfitresume.com
-              <i data-lucide="arrow-up-right" class="brand-icon"></i>
-            </a>
-          </article>
-          <article class="brand-card">
-            <div class="brand-mini-label" data-i18n="cases.market.category">Маркетплейс</div>
-            <h3 style="margin-top: 0.5rem;" data-i18n="cases.market.title">Платформа детских секций</h3>
-            <p class="brand-lead" style="margin-top: 0.75rem;" data-i18n="cases.market.text">KZ-платформа для поиска кружков: маркетплейс, расписания, запись и масштабирование под регионы.</p>
-          </article>
-        </div>
-        <div class="brand-contact-info">
-          <span data-i18n="cases.cta.text">Нужен похожий продукт?</span>
-          <a href="#contact" class="brand-cta">
-            <span data-i18n="cases.cta.link">Расскажите о задаче</span>
-            <i data-lucide="arrow-right" class="brand-icon"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="brand-container brand-section-wrapper">
-      <div class="brand-section brand-section-light">
-        <div class="brand-section-header" id="contact-header">
-          <span class="brand-badge" data-i18n="nav.contact">Контакты</span>
-          <h2 data-i18n="contact.title">Контакты</h2>
-          <p data-i18n="contact.description">Опишите задачу в нескольких предложениях - вернёмся с идеями и планом запуска.</p>
-        </div>
-        <form class="brand-form" id="contactForm">
-          <input type="text" name="name" required placeholder="Имя" data-i18n-placeholder="contact.form.name" />
-          <input type="email" name="email" required placeholder="Email" data-i18n-placeholder="contact.form.email" />
-          <input type="text" name="subject" class="full-width" placeholder="Тема" data-i18n-placeholder="contact.form.subject" />
-          <textarea name="message" rows="4" class="full-width" required placeholder="Сообщение" data-i18n-placeholder="contact.form.message"></textarea>
-          
-          <!-- Visual Captcha -->
-          <div class="captcha-container" style="padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #0ea5e9; border-radius: 8px; margin: 1rem 0; text-align: center;">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 1rem; font-weight: 500; color: #0369a1;">
-              <div style="background: #fff; padding: 0.6rem 0.8rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); min-width: 40px;" id="num1">?</div>
-              <div style="font-size: 1.2rem; color: #0ea5e9;" id="operator">+</div>
-              <div style="background: #fff; padding: 0.6rem 0.8rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); min-width: 40px;" id="num2">?</div>
-              <div style="font-size: 1.2rem; color: #0ea5e9;">=</div>
-              <input type="number" id="captcha-answer" required style="width: 60px; padding: 0.6rem; border: 1px solid #0ea5e9; border-radius: 6px; text-align: center; font-size: 1rem; font-weight: 500;" placeholder="?" />
-            </div>
-            <div style="margin-top: 0.3rem; font-size: 0.8rem; color: #0369a1;" data-i18n="contact.captcha.help">Решите простой пример</div>
           </div>
-          
-          <button type="submit" class="brand-button full-width brand-button-inline">
-            <span data-i18n="contact.button">Отправить сообщение</span>
-            <i data-lucide="arrow-right" class="brand-icon"></i>
-          </button>
-        </form>
-        
-        <!-- Success message (hidden by default) -->
-        <div id="success-message" style="display: none; text-align: center; padding: 2rem; background: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 8px; margin-top: 1rem;">
-          <div style="color: #0ea5e9; font-size: 3rem; margin-bottom: 1rem;">✓</div>
-          <h3 style="color: #0ea5e9; margin-bottom: 0.5rem;" data-i18n="contact.success.title">Сообщение отправлено!</h3>
-          <p style="margin: 0;" data-i18n="contact.success.text">Спасибо за обращение! Мы свяжемся с вами в ближайшее время.</p>
-        </div>
-        
-        <!-- Error message (hidden by default) -->
-        <div id="error-message" style="display: none; text-align: center; padding: 1.5rem; background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; margin-top: 1rem;">
-          <div style="color: #ef4444; font-size: 2rem; margin-bottom: 0.5rem;">⚠</div>
-          <h4 style="color: #ef4444; margin-bottom: 0.5rem;" data-i18n="contact.error.title">Ошибка проверки</h4>
-          <p style="margin: 0;" data-i18n="contact.error.text">Неверный ответ на математический вопрос. Попробуйте снова.</p>
-        </div>
-        <div class="brand-contact-info">
-          <span class="brand-inline">
-            <i data-lucide="mail" class="brand-icon"></i>
-            hello@insteppe.com
-          </span>
-          <a href="https://www.linkedin.com/company/insteppe" target="_blank" class="brand-inline">
-            <i data-lucide="linkedin" class="brand-icon"></i>
-            LinkedIn
-          </a>
-          <span class="brand-inline">
-            <i data-lucide="map-pin" class="brand-icon"></i>
-            Almaty · Astana · Remote
-          </span>
+          <div class="card card-bg">
+            <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="8.5" width="5.5" height="7" rx="1.5" fill="currentColor" fill-opacity="0.32"/><rect x="16.5" y="8.5" width="5.5" height="7" rx="1.5" fill="currentColor"/><circle cx="12" cy="12" r="3" fill="currentColor" fill-opacity="0.68"/><rect x="7.5" y="11.25" width="1.5" height="1.5" rx="0.25" fill="currentColor" fill-opacity="0.5"/><rect x="15" y="11.25" width="1.5" height="1.5" rx="0.25" fill="currentColor" fill-opacity="0.5"/></svg></div>
+            <div class="card-label" data-i18n="approach.process.badge">Processes</div>
+            <h3 data-i18n="approach.process.title">DevOps &amp; operations</h3>
+            <ul>
+              <li data-i18n="approach.process.item1">CI/CD and automated deployments</li>
+              <li data-i18n="approach.process.item2">Monitoring, logging, security</li>
+              <li data-i18n="approach.process.item3">Infrastructure as code, resiliency</li>
+            </ul>
+            <p class="mt-sm" style="font-size:.88rem;color:var(--muted);" data-i18n="approach.process.note">Products are ready for real production from release one.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ── CASES ──────────────────────────────────────────── -->
+    <section id="cases" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="nav.cases">Cases</span>
+          <h2 data-i18n="cases.title">Products in production</h2>
+          <p data-i18n="cases.description">We own launches and maintenance - these products are already live.</p>
+        </div>
+        <div class="cards-grid-3">
+          <div class="card">
+            <div class="card-label" data-i18n="cases.restio.category">HoReCa · Kazakhstan</div>
+            <h3 class="mt-xs">Restio</h3>
+            <p class="mt-xs" data-i18n="cases.restio.text">Restaurant booking platform built for peak-load. Zero downtime releases - from architecture to production ops.</p>
+            <a href="https://restio.info" target="_blank" rel="noopener" class="case-link">
+              restio.info <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M10 7h7v7"/></svg>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-label" data-i18n="cases.fastfit.category">SaaS · International</div>
+            <h3 class="mt-xs">FastFit Resume</h3>
+            <p class="mt-xs" data-i18n="cases.fastfit.text">Resume builder SaaS with users across multiple countries. Full product ownership: subscriptions, analytics, growth.</p>
+            <a href="https://fastfitresume.com" target="_blank" rel="noopener" class="case-link">
+              fastfitresume.com <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M10 7h7v7"/></svg>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-label" data-i18n="cases.market.category">Marketplace · Kazakhstan</div>
+            <h3 class="mt-xs" data-i18n="cases.market.title">Kids activities platform</h3>
+            <p class="mt-xs" data-i18n="cases.market.text">Multi-city marketplace for children's activities. Booking, schedules, provider management - built to scale regionally.</p>
+          </div>
+        </div>
+        <div class="flex-row mt-lg">
+          <span class="text-muted" data-i18n="cases.cta.text">Need a similar product?</span>
+          <a href="#contact" class="btn btn-primary">
+            <span data-i18n="cases.cta.link">Tell us about your task</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H20M14 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────── -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-inner">
+
+          <div class="contact-info">
+            <span class="section-label" data-i18n="nav.contact">Contact</span>
+            <h2 data-i18n="contact.title">Let's build something great</h2>
+            <p data-i18n="contact.description">Share a short brief - we'll reply with ideas and a launch plan.</p>
+            <div class="contact-meta">
+              <div class="contact-meta-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 7.5L12 13.5L22 7.5"/><path d="M2 19L8.5 13.5M22 19L15.5 13.5"/></svg>
+                hello@insteppe.com
+              </div>
+              <a href="https://www.linkedin.com/company/insteppe" target="_blank" rel="noopener" class="contact-meta-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+              <div class="contact-meta-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z"/><path d="M12 7l1.75 2.5L12 12l-1.75-2.5L12 7Z" fill="currentColor" stroke="none"/></svg>
+                Almaty · Astana · Remote
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-card">
+              <form class="form-grid" id="contactForm">
+                <div class="form-field">
+                  <label data-i18n="contact.form.name">Name</label>
+                  <input type="text" name="name" required placeholder="Name" data-i18n-placeholder="contact.form.name" />
+                </div>
+                <div class="form-field">
+                  <label>Email</label>
+                  <input type="email" name="email" required placeholder="Email" />
+                </div>
+                <div class="form-field full">
+                  <label data-i18n="contact.form.subject">Subject</label>
+                  <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="contact.form.subject" />
+                </div>
+                <div class="form-field full">
+                  <label data-i18n="contact.form.message">Message</label>
+                  <textarea name="message" rows="4" required placeholder="Message" data-i18n-placeholder="contact.form.message"></textarea>
+                </div>
+                <div class="full">
+                  <div class="captcha-wrap">
+                    <div class="captcha-row">
+                      <div class="captcha-num" id="num1">?</div>
+                      <div class="captcha-op" id="operator">+</div>
+                      <div class="captcha-num" id="num2">?</div>
+                      <div class="captcha-op">=</div>
+                      <input type="number" id="captcha-answer" class="captcha-input" required placeholder="?" />
+                    </div>
+                    <div class="captcha-hint" data-i18n="contact.captcha.help">Solve the simple math problem</div>
+                  </div>
+                </div>
+                <div class="full">
+                  <button type="submit" class="btn btn-primary btn-full">
+                    <span data-i18n="contact.button">Send message</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H20M14 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+              </form>
+              <div id="success-message" class="msg-success">
+                <div class="msg-icon">✓</div>
+                <h3 data-i18n="contact.success.title">Message sent!</h3>
+                <p data-i18n="contact.success.text">Thank you for reaching out! We will contact you shortly.</p>
+              </div>
+              <div id="error-message" class="msg-error">
+                <span data-i18n="contact.error.text">Incorrect answer. Please try again.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="brand-footer">
-    <div class="brand-container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-      <span data-i18n="footer.copyright">© 2025–<span id="year"></span> Insteppe. Все права защищены.</span>
-      <div style="display: flex; gap: 1rem;">
-        <a href="/privacy.html" data-i18n="footer.privacy">Конфиденциальность</a>
-        <a href="/terms.html" data-i18n="footer.terms">Условия</a>
-        <a href="/copyright.html" data-i18n="footer.copyright_link">Авторские права</a>
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span data-i18n="footer.copyright">© 2025-<span id="year"></span> Insteppe. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy.html"   data-i18n="footer.privacy">Privacy</a>
+        <a href="/terms.html"     data-i18n="footer.terms">Terms</a>
+        <a href="/copyright.html" data-i18n="footer.copyright_link">Copyright</a>
       </div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-
     const yearEl = document.getElementById('year');
     const currentYear = new Date().getFullYear();
     yearEl.textContent = currentYear > 2025 ? currentYear : 2025;
 
     const translations = {
       ru: {
-        'page.title': 'Insteppe Studio - разработка цифровых продуктов под ключ',
-        'meta.description': 'Insteppe Studio - технологичная команда, которая проектирует, разрабатывает и поддерживает web и mobile продукты, готовые к production с первого релиза.',
+        'page.title': 'Insteppe Studio - Senior продакт команда. Казахстан.',
+        'meta.description': 'Команда, которую нанимают фаундеры и CTO, когда средних студий уже недостаточно. Web и mobile продукты от дискавери до масштабирования.',
         'nav.team': 'Команда',
         'nav.approach': 'Подход',
         'nav.cases': 'Кейсы',
         'nav.contact': 'Контакты',
         'header.cta': 'Обсудить задачу',
-        'hero.tagline': 'Технический партнёр бизнеса',
-        'hero.heading': 'Разработка web и mobile продуктов под ключ',
-        'hero.description': 'Одна технологичная команда ведёт проект от discovery до production: архитектура, разработка, QA и DevOps. Продукты стабильно работают, масштабируются и поддерживаются долгосрочно.',
+        'hero.tagline': 'Senior продакт студия · Алматы и Астана',
+        'hero.heading': 'Senior команда за продуктами, которые <span class="gradient-text">запускаются и растут</span>',
+        'hero.description': 'Нас нанимают фаундеры и CTO, когда средних студий уже недостаточно. Архитектура, разработка, автоматизация QA и DevOps под одной крышей.',
+        'hero.cases_btn': 'Наши проекты',
         'hero.stat1.title': '10+ лет',
-        'hero.stat1.text': 'опыта enterprise и стартапов',
-        'hero.stat2.title': 'Senior ядро',
-        'hero.stat2.text': 'архитекторы и лиды внутри команды',
-        'hero.stat3.title': 'Ответственность',
-        'hero.stat3.text': 'берём на себя результат и сроки',
-        'hero.stat4.title': 'С 2025',
-        'hero.stat4.text': 'год основания Insteppe Studio',
+        'hero.stat1.text': 'средний опыт каждого senior\'а',
+        'hero.stat2.title': '70% senior',
+        'hero.stat2.text': 'engineers, architects & QA leads',
+        'hero.stat3.title': '3 продукта',
+        'hero.stat3.text': 'уже работают в production',
+        'hero.stat4.title': 'Ex-enterprise',
+        'hero.stat4.text': 'основана senior-инженерами из крупных компаний',
+        'who.label': 'Кому мы подходим',
+        'who.title': 'Для фаундеров и CTO, которым нужен партнёр, а не подрядчик',
+        'who.sub': 'Мы не body shop. Нас привлекают, когда продукт нужно сделать правильно.',
+        'who.item1.title': 'SaaS-фаундеры',
+        'who.item1.text': 'Строите продукт за пределами MVP и нужна команда, которая думает продуктом, а не тикетами.',
+        'who.item2.title': 'CTO и Tech Leads',
+        'who.item2.text': 'Замена разрозненных фрилансеров одной ответственной командой, которая владеет всем стеком.',
+        'who.item3.title': 'Бизнес в Центральной Азии',
+        'who.item3.text': 'Компании в Казахстане и регионе, готовые к серьёзному цифровому продукту с локальной senior-командой.',
         'team.title': 'Команда полного цикла',
         'team.description': 'Работаем одной командой без зависимости от внешних подрядчиков и закрываем весь цикл продукта - от аналитики до эксплуатации.',
         'team.cta': 'Обсудить проект',
@@ -390,29 +416,28 @@
         'approach.process.note': 'Продукты готовы к реальной эксплуатации с первого релиза.',
         'cases.title': 'Реальные продукты',
         'cases.description': 'Берём ответственность за запуск и поддержку - ниже проекты, которые уже работают.',
-        'cases.restio.category': 'HoReCa',
-        'cases.restio.text': 'Сервис бронирования для ресторанов и кофеен. Архитектура под высокую нагрузку, стабильные релизы.',
-        'cases.fastfit.category': 'SaaS',
-        'cases.fastfit.text': 'Международный SaaS Resume Builder: web, подписки, аналитика и поддержка.',
-        'cases.market.category': 'Маркетплейс',
+        'cases.restio.category': 'HoReCa · Казахстан',
+        'cases.restio.text': 'Платформа бронирования ресторанов под пиковые нагрузки. Нулевой даунтайм релизы - от архитектуры до production-эксплуатации.',
+        'cases.fastfit.category': 'SaaS · International',
+        'cases.fastfit.text': 'Resume Builder SaaS с пользователями в нескольких странах. Полное владение продуктом: подписки, аналитика, рост.',
+        'cases.market.category': 'Маркетплейс · Казахстан',
         'cases.market.title': 'Платформа детских секций',
-        'cases.market.text': 'KZ-платформа для поиска кружков: маркетплейс, расписания, запись и масштабирование под регионы.',
+        'cases.market.text': 'Маркетплейс кружков для нескольких городов. Бронирование, расписания, управление провайдерами - архитектура под региональный рост.',
         'cases.cta.text': 'Нужен похожий продукт?',
         'cases.cta.link': 'Расскажите о задаче',
-        'contact.title': 'Контакты',
+        'contact.title': 'Давайте создадим что-то крутое',
         'contact.description': 'Опишите задачу в нескольких предложениях - вернёмся с идеями и планом запуска.',
         'contact.form.name': 'Имя',
         'contact.form.email': 'Email',
         'contact.form.subject': 'Тема',
         'contact.form.message': 'Сообщение',
         'contact.button': 'Отправить сообщение',
-        'contact.captcha': 'Сколько будет <span id="captcha-question"></span>?',
+        'contact.captcha.help': 'Решите простой пример',
         'contact.success.title': 'Сообщение отправлено!',
         'contact.success.text': 'Спасибо за обращение! Мы свяжемся с вами в ближайшее время.',
         'contact.error.title': 'Ошибка проверки',
         'contact.error.text': 'Неверный ответ на математический вопрос. Попробуйте снова.',
-        'contact.captcha.help': 'Решите простой пример',
-        'footer.copyright': '© 2025–2026 Insteppe. Все права защищены.',
+        'footer.copyright': '© 2025-2026 Insteppe. Все права защищены.',
         'footer.privacy': 'Конфиденциальность',
         'footer.terms': 'Условия',
         'footer.copyright_link': 'Авторские права'
@@ -425,17 +450,27 @@
         'nav.cases': 'Cases',
         'nav.contact': 'Contact',
         'header.cta': 'Discuss a project',
-        'hero.tagline': 'Technology partner for business',
-        'hero.heading': 'We build web and mobile products end-to-end',
-        'hero.description': 'One senior team guides your product from discovery to production: architecture, engineering, QA, and DevOps. Releases stay stable, scalable, and maintainable long term.',
+        'hero.tagline': 'Senior product studio · Almaty &amp; Astana',
+        'hero.heading': 'The senior team behind products that <span class="gradient-text">ship and scale</span>',
+        'hero.description': "We're the team founders and CTOs hire when middle-level studios stop being enough. Architecture, engineering, QA automation, and DevOps under one roof.",
+        'hero.cases_btn': 'See our work',
         'hero.stat1.title': '10+ years',
-        'hero.stat1.text': 'enterprise & startup experience',
-        'hero.stat2.title': 'Senior core',
-        'hero.stat2.text': 'architecture leads embedded inside the team',
-        'hero.stat3.title': 'Ownership',
-        'hero.stat3.text': 'we commit to outcomes and deadlines',
-        'hero.stat4.title': 'Since 2025',
-        'hero.stat4.text': 'Insteppe Studio was founded this year',
+        'hero.stat1.text': 'avg. senior experience per engineer',
+        'hero.stat2.title': '70% senior',
+        'hero.stat2.text': 'engineers, architects & QA leads',
+        'hero.stat3.title': '3 products',
+        'hero.stat3.text': 'already live in production',
+        'hero.stat4.title': 'Ex-enterprise',
+        'hero.stat4.text': 'founded by senior engineers from large companies',
+        'who.label': 'Who we work with',
+        'who.title': 'Built for founders and CTOs who need more than a vendor',
+        'who.sub': "We're not a body shop. We're the team you bring in when the product needs to be done right.",
+        'who.item1.title': 'SaaS Founders',
+        'who.item1.text': 'Building beyond MVP and need a senior team that thinks in products, not just tickets.',
+        'who.item2.title': 'CTOs &amp; Tech Leads',
+        'who.item2.text': 'Replacing a patchwork of freelancers with one accountable team that owns the full stack.',
+        'who.item3.title': 'Central Asian Businesses',
+        'who.item3.text': 'Companies in Kazakhstan and the region ready for a senior local team with global product standards.',
         'team.title': 'Full-cycle team',
         'team.description': 'A single squad, no external vendors. We cover the entire product cycle - from business analysis to operations.',
         'team.cta': 'Talk with the team',
@@ -466,29 +501,28 @@
         'approach.process.note': 'Products are ready for real production from release one.',
         'cases.title': 'Products in production',
         'cases.description': 'We own launches and maintenance - these products are already live.',
-        'cases.restio.category': 'HoReCa',
-        'cases.restio.text': 'Reservation service for restaurants and cafés. Built for high load with reliable releases.',
-        'cases.fastfit.category': 'SaaS',
-        'cases.fastfit.text': 'International resume builder SaaS: web app, subscriptions, analytics, and support.',
-        'cases.market.category': 'Marketplace',
+        'cases.restio.category': 'HoReCa · Kazakhstan',
+        'cases.restio.text': 'Restaurant booking platform built for peak-load. Zero downtime releases - from architecture to production ops.',
+        'cases.fastfit.category': 'SaaS · International',
+        'cases.fastfit.text': 'Resume builder SaaS with users across multiple countries. Full product ownership: subscriptions, analytics, growth.',
+        'cases.market.category': 'Marketplace · Kazakhstan',
         'cases.market.title': 'Kids activities platform',
-        'cases.market.text': 'Kazakhstan marketplace with schedules and bookings, ready to scale to new regions.',
+        'cases.market.text': 'Multi-city marketplace for children\'s activities. Booking, schedules, provider management - built to scale regionally.',
         'cases.cta.text': 'Need a similar product?',
         'cases.cta.link': 'Tell us about your task',
-        'contact.title': 'Contact',
-        'contact.description': 'Share a short brief - we will reply with ideas and a launch plan.',
+        'contact.title': "Let's build something great",
+        'contact.description': "Share a short brief - we'll reply with ideas and a launch plan.",
         'contact.form.name': 'Name',
         'contact.form.email': 'Email',
         'contact.form.subject': 'Subject',
         'contact.form.message': 'Message',
         'contact.button': 'Send message',
-        'contact.captcha': 'What is <span id="captcha-question"></span>?',
+        'contact.captcha.help': 'Solve the simple math problem',
         'contact.success.title': 'Message sent!',
         'contact.success.text': 'Thank you for reaching out! We will contact you shortly.',
         'contact.error.title': 'Verification Error',
         'contact.error.text': 'Incorrect answer to the math question. Please try again.',
-        'contact.captcha.help': 'Solve the simple math problem',
-        'footer.copyright': '© 2025–2026 Insteppe. All rights reserved.',
+        'footer.copyright': '© 2025-2026 Insteppe. All rights reserved.',
         'footer.privacy': 'Privacy',
         'footer.terms': 'Terms',
         'footer.copyright_link': 'Copyright'
@@ -504,132 +538,96 @@
       document.documentElement.setAttribute('lang', lang === 'ru' ? 'ru' : 'en');
       document.title = translations[lang]['page.title'];
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', translations[lang]['meta.description']);
-      }
-      langButtons.forEach((btn) => {
-        btn.classList.toggle('is-active', btn.dataset.langBtn === lang);
-      });
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['meta.description']);
+      langButtons.forEach(btn => btn.classList.toggle('is-active', btn.dataset.langBtn === lang));
+      document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
-        if (translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
+        if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
       });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.dataset.i18nPlaceholder;
-        if (translations[lang][key]) {
-          el.setAttribute('placeholder', translations[lang][key]);
-        }
+        if (translations[lang][key]) el.setAttribute('placeholder', translations[lang][key]);
       });
     }
 
-    langButtons.forEach((btn) => {
+    langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        if (btn.dataset.langBtn !== currentLang) {
-          applyLanguage(btn.dataset.langBtn);
-        }
+        if (btn.dataset.langBtn !== currentLang) applyLanguage(btn.dataset.langBtn);
       });
     });
 
     applyLanguage(currentLang);
 
+    // ── Captcha ──────────────────────────────────────────
+    let captchaAnswer = 0;
+
+    function generateCaptcha() {
+      const a = Math.floor(Math.random() * 10) + 1;
+      const b = Math.floor(Math.random() * 10) + 1;
+      const useAdd = Math.random() > 0.5;
+      if (useAdd) {
+        captchaAnswer = a + b;
+        document.getElementById('num1').textContent = a;
+        document.getElementById('num2').textContent = b;
+        document.getElementById('operator').textContent = '+';
+      } else {
+        const big = Math.max(a, b), small = Math.min(a, b);
+        captchaAnswer = big - small;
+        document.getElementById('num1').textContent = big;
+        document.getElementById('num2').textContent = small;
+        document.getElementById('operator').textContent = '−';
+      }
+    }
+
+    generateCaptcha();
+
+    // ── Form submit ──────────────────────────────────────
     const contactForm = document.getElementById('contactForm');
     const formLabels = {
       ru: { name: 'Имя', email: 'Email', subject: 'Запрос по проекту' },
       en: { name: 'Name', email: 'Email', subject: 'Project request' }
     };
 
-    // Captcha variables
-    let captchaAnswer = 0;
-    
-    function generateCaptcha() {
-      const num1 = Math.floor(Math.random() * 10) + 1;
-      const num2 = Math.floor(Math.random() * 10) + 1;
-      const operations = ['+', '-'];
-      const operation = operations[Math.random() > 0.5 ? 0 : 1];
-      
-      if (operation === '+') {
-        captchaAnswer = num1 + num2;
-      } else {
-        // Ensure positive result for subtraction
-        const bigger = Math.max(num1, num2);
-        const smaller = Math.min(num1, num2);
-        captchaAnswer = bigger - smaller;
-        document.getElementById('num1').textContent = bigger;
-        document.getElementById('num2').textContent = smaller;
-        document.getElementById('operator').textContent = '-';
-        return;
-      }
-      
-      document.getElementById('num1').textContent = num1;
-      document.getElementById('num2').textContent = num2;
-      document.getElementById('operator').textContent = operation;
-    }
-    
-    // Generate captcha on page load
-    generateCaptcha();
-
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', event => {
       event.preventDefault();
-      
-      // Check captcha
-      const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+
+      const userAnswer = parseInt(document.getElementById('captcha-answer').value, 10);
       if (userAnswer !== captchaAnswer) {
-        // Show error message
-        document.getElementById('error-message').style.display = 'block';
+        const errEl = document.getElementById('error-message');
+        errEl.style.display = 'block';
         generateCaptcha();
         document.getElementById('captcha-answer').value = '';
-        
-        // Hide error message after 4 seconds
-        setTimeout(() => {
-          document.getElementById('error-message').style.display = 'none';
-        }, 4000);
-        
+        setTimeout(() => { errEl.style.display = 'none'; }, 4000);
         return;
       }
-      
+
       const formData = new FormData(event.target);
-      const name = formData.get('name');
-      const email = formData.get('email');
+      const name    = formData.get('name');
+      const email   = formData.get('email');
       const subject = formData.get('subject') || formLabels[currentLang].subject;
       const message = formData.get('message');
 
-      // Disable form during submission
-      const form = event.target;
-      const button = form.querySelector('button[type="submit"]');
-      const inputs = form.querySelectorAll('input, textarea, button');
-      
-      inputs.forEach(input => input.disabled = true);
-      button.innerHTML = currentLang === 'ru' ? 
-        '<span>Отправляем...</span>' : 
-        '<span>Sending...</span>';
+      const button = contactForm.querySelector('button[type="submit"]');
+      const inputs = contactForm.querySelectorAll('input, textarea, button');
+      inputs.forEach(el => el.disabled = true);
+      button.innerHTML = currentLang === 'ru' ? '<span>Отправляем…</span>' : '<span>Sending…</span>';
 
-      // Google Forms submission
-      const googleFormData = new FormData();
-      googleFormData.append('entry.235762051', name);
-      googleFormData.append('entry.1520040868', email);
-      googleFormData.append('entry.733062920', subject);
-      googleFormData.append('entry.310541831', message);
+      const gFormData = new FormData();
+      gFormData.append('entry.235762051',  name);
+      gFormData.append('entry.1520040868', email);
+      gFormData.append('entry.733062920',  subject);
+      gFormData.append('entry.310541831',  message);
 
-      // Submit to Google Forms
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSfAzbVfDF0_O_Zub5tLJp2UrSZ2-D78YeOY4IHqy90lhfX9Gg/formResponse', {
         method: 'POST',
         mode: 'no-cors',
-        body: googleFormData
+        body: gFormData
       }).then(() => {
-        // Hide form header description and form itself
-        document.getElementById('contact-header').querySelector('p[data-i18n="contact.description"]').style.display = 'none';
-        form.style.display = 'none';
-        
-        // Show success message
+        contactForm.style.display = 'none';
         document.getElementById('success-message').style.display = 'block';
       }).catch(() => {
-        // Re-enable form and fallback to email
-        inputs.forEach(input => input.disabled = false);
-        button.innerHTML = `<span data-i18n="contact.button">${translations[currentLang]['contact.button']}</span><i data-lucide="arrow-right" class="brand-icon"></i>`;
-        lucide.createIcons();
-        
+        inputs.forEach(el => el.disabled = false);
+        button.innerHTML = `<span>${translations[currentLang]['contact.button']}</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H20M14 6l6 6-6 6"/></svg>`;
         const body = `${formLabels[currentLang].name}: ${name}\n${formLabels[currentLang].email}: ${email}\n\n${message}`;
         window.location.href = `mailto:hello@insteppe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
