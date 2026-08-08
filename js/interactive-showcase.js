@@ -49,7 +49,7 @@
     const canvas = hero?.querySelector('.hero-particle-canvas');
     if (!hero || !field || !canvas || reducedMotion) return;
 
-    const context = canvas.getContext('2d', { alpha: true });
+    const context = canvas.getContext('2d');
     if (!context) return;
 
     let particles = [];
@@ -57,12 +57,14 @@
     let pointerY = -1000;
     let frameId;
     let resizeTimer;
+    let startAttempts = 0;
+    let started = false;
 
     const build = () => {
       const width = field.clientWidth;
       const height = field.clientHeight;
-      const deviceScale = Math.min(window.devicePixelRatio || 1, 2);
-      if (!width || !height) return;
+      const deviceScale = Math.min(window.devicePixelRatio || 1, width < 700 ? 1.5 : 2);
+      if (!width || !height) return false;
 
       canvas.width = Math.round(width * deviceScale);
       canvas.height = Math.round(height * deviceScale);
@@ -73,8 +75,8 @@
       const source = document.createElement('canvas');
       source.width = width;
       source.height = height;
-      const sourceContext = source.getContext('2d', { willReadFrequently: true });
-      if (!sourceContext) return;
+      const sourceContext = source.getContext('2d');
+      if (!sourceContext) return false;
 
       let fontSize = Math.min(height * 0.72, width * 0.36);
       sourceContext.font = `800 ${fontSize}px "Sofia Sans Extra Condensed", sans-serif`;
@@ -88,8 +90,13 @@
       sourceContext.textBaseline = 'middle';
       sourceContext.fillText('INSTEPPE', width / 2, height / 2);
 
-      const pixels = sourceContext.getImageData(0, 0, width, height).data;
-      const step = width < 700 ? 5 : 6;
+      let pixels;
+      try {
+        pixels = sourceContext.getImageData(0, 0, width, height).data;
+      } catch (error) {
+        return false;
+      }
+      const step = 6;
       particles = [];
 
       for (let y = 0; y < height; y += step) {
@@ -101,7 +108,9 @@
         }
       }
 
+      if (!particles.length) return false;
       document.documentElement.classList.add('has-particle-hero');
+      return true;
     };
 
     const animate = (time) => {
@@ -125,23 +134,39 @@
       pointerY = -1000;
     });
 
-    const resizeObserver = new ResizeObserver(() => {
+    const scheduleBuild = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(build, 120);
-    });
-    resizeObserver.observe(field);
+    };
+
+    if ('ResizeObserver' in window) {
+      const resizeObserver = new ResizeObserver(scheduleBuild);
+      resizeObserver.observe(field);
+    } else {
+      window.addEventListener('resize', scheduleBuild, { passive: true });
+    }
+    window.visualViewport?.addEventListener('resize', scheduleBuild, { passive: true });
 
     const start = () => {
-      build();
+      if (started) return;
+      if (!build()) {
+        startAttempts += 1;
+        if (startAttempts < 8) setTimeout(start, 180);
+        return;
+      }
+      started = true;
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(animate);
     };
 
     if (document.fonts?.load) {
       document.fonts.load('800 180px "Sofia Sans Extra Condensed"').then(start, start);
-    } else {
-      start();
     }
+    setTimeout(start, 450);
+    window.addEventListener('pageshow', () => {
+      if (started) scheduleBuild();
+      else start();
+    });
   }
 
   function initProjectShowcase() {
