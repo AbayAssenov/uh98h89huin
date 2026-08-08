@@ -139,11 +139,22 @@
         <button data-lang-btn="ru">RU</button>
         <button data-lang-btn="en">EN</button>
       </div>
+      <button class="mobile-menu-toggle" type="button" aria-controls="mobileNav" aria-expanded="false" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+      </button>
       <a href="#contact" class="btn btn-primary">
         <span data-i18n="header.cta">Discuss a project</span>
       </a>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#cases"    data-i18n="nav.cases">Cases</a>
+    <a href="#studio"   data-i18n="nav.studio">Studio</a>
+    <a href="#approach" data-i18n="nav.approach">Process</a>
+    <a href="#contact"  data-i18n="nav.contact">Contact</a>
+  </nav>
   <div class="scroll-progress" aria-hidden="true"></div>
 </header>
 
@@ -767,6 +778,25 @@
 
   langBtns.forEach(b => b.addEventListener('click', () => { if (b.dataset.langBtn !== lang) applyLang(b.dataset.langBtn); }));
   applyLang(lang);
+
+  // ── Mobile navigation ────────────────────────────────
+  const siteHeader = document.querySelector('.site-header');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function setMobileMenu(open) {
+    siteHeader.classList.toggle('is-menu-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    setMobileMenu(menuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') setMobileMenu(false);
+  });
 
   // ── Captcha ──────────────────────────────────────────
   let captchaAnswer = 0;
