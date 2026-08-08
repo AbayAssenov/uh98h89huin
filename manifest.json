@@ -1,0 +1,26 @@
+{
+  "name": "Insteppe Studio",
+  "short_name": "Insteppe",
+  "description": "Product studio from Kazakhstan building SaaS, marketplaces, LegalTech and self-reflection products.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F6F1",
+  "theme_color": "#111318",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

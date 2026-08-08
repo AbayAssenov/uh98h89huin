@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insteppe Studio - Product Design and Software Engineering</title>
+  <meta name="description" content="Product studio from Kazakhstan building SaaS, marketplaces, LegalTech and self-reflection products. Behind Restio, FastFit Resume, Baru, LawKit, askAtlans and custom digital products." />
+  <meta name="keywords" content="Insteppe, product design, software engineering, SaaS development, marketplace development, web applications, mobile applications, Kazakhstan" />
+  <meta name="author" content="Insteppe Studio" />
+  <link rel="canonical" href="https://insteppe.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://insteppe.com/" />
+  <meta property="og:title" content="Insteppe Studio - Product Design and Software Engineering" />
+  <meta property="og:description" content="Product studio from Kazakhstan building SaaS, marketplaces and business software." />
+  <meta property="og:image" content="https://insteppe.com/logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Insteppe Studio - Product Design and Software Engineering" />
+  <meta name="twitter:description" content="Product studio from Kazakhstan building SaaS, marketplaces and business software." />
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://insteppe.com/#organization",
+        "name": "Insteppe Studio",
+        "url": "https://insteppe.com/",
+        "logo": "https://insteppe.com/logo.png",
+        "email": "hello@insteppe.com",
+        "areaServed": ["Kazakhstan", "Worldwide"],
+        "foundingDate": "2025-01-01",
+        "description": "Product studio from Kazakhstan behind Restio, FastFit Resume, Baru, LawKit, askAtlans and custom digital products.",
+        "sameAs": [
+          "https://www.linkedin.com/company/insteppe"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "business",
+          "email": "hello@insteppe.com",
+          "availableLanguage": ["English", "Russian"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://insteppe.com/#website",
+        "url": "https://insteppe.com/",
+        "name": "Insteppe Studio",
+        "publisher": {
+          "@id": "https://insteppe.com/#organization"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://insteppe.com/#service",
+        "name": "Product design and software engineering",
+        "url": "https://insteppe.com/",
+        "provider": {
+          "@id": "https://insteppe.com/#organization"
+        },
+        "areaServed": ["Kazakhstan", "Worldwide"],
+        "serviceType": [
+          "Product discovery",
+          "Web application development",
+          "Mobile application development",
+          "Backend engineering",
+          "QA automation",
+          "DevOps and infrastructure"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://insteppe.com/#products",
+        "name": "Products built by Insteppe Studio",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Restio",
+            "url": "https://restio.info/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FastFit Resume",
+            "url": "https://fastfitresume.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Baru",
+            "url": "https://baru.kz/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "LawKit",
+            "url": "https://lawkit.kz/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "askAtlans",
+            "url": "https://www.askatlans.com/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/styles/brand.css" />
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#home" class="header-logo" aria-label="Insteppe Studio">
+      <span class="brand-wordmark" aria-hidden="true">
+        <span class="brand-name">INSTEPPE</span>
+        <span class="brand-descriptor">PRODUCT STUDIO</span>
+      </span>
+    </a>
+    <nav class="header-nav">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#cases"    data-i18n="nav.cases">Cases</a>
+      <a href="#studio"   data-i18n="nav.studio">Studio</a>
+      <a href="#approach" data-i18n="nav.approach">Process</a>
+      <a href="#contact"  data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button data-lang-btn="ru">RU</button>
+        <button data-lang-btn="en">EN</button>
+      </div>
+      <a href="#contact" class="btn btn-primary">
+        <span data-i18n="header.cta">Discuss a project</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+</header>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section id="home" class="hero">
+  <div class="hero-particle-field" aria-hidden="true">
+    <canvas class="hero-particle-canvas"></canvas>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-topline">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span data-i18n="hero.tagline">Product studio · Almaty &amp; Astana</span>
+        </div>
+        <div class="hero-trust">
+          <strong aria-hidden="true">05</strong>
+          <span data-i18n="hero.trust">5 products live</span>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="hero-title" data-i18n="hero.heading">Digital products</h1>
+        <p class="hero-sub" data-i18n="hero.description">Design and engineering.<br>Web, mobile and backend.</p>
+      </div>
+
+      <div class="hero-wordmark" aria-hidden="true">INSTEPPE</div>
+
+      <div class="hero-bottomline">
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary btn-lg" data-i18n="header.cta">Discuss a project</a>
+          <a href="#cases" class="btn btn-outline btn-lg">
+            <span data-i18n="hero.cases_btn">See our work</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── METRICS ────────────────────────────────────────── -->
+<section class="metrics-band" aria-label="Insteppe Studio metrics">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <strong>10<span class="g">+</span></strong>
+        <span data-i18n="hero.stat1.text">years of product and engineering experience</span>
+      </div>
+      <div class="metric-card">
+        <strong>Studio</strong>
+        <span data-i18n="hero.stat2.text">in-house studio model</span>
+      </div>
+      <div class="metric-card">
+        <strong>5</strong>
+        <span data-i18n="hero.stat3.text">products in production</span>
+      </div>
+      <div class="metric-card">
+        <strong>KZ<span class="g">+</span>INT</strong>
+        <span data-i18n="hero.stat4.text">Almaty · Astana · Remote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ── SERVICES ───────────────────────────────────────── -->
+<section id="services" class="section-alt">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="services.label">Services</span>
+      <h2 data-i18n="services.title">What <span class="accent-word">we do</span></h2>
+      <p data-i18n="services.sub">Products designed and built end to end.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item1.title">Web Applications</h3>
+        <p data-i18n="services.item1.text">Platforms, dashboards and B2B/B2C services.</p>
+      </div>
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item2.title">Mobile Apps</h3>
+        <p data-i18n="services.item2.text">Apps for iOS and Android.</p>
+      </div>
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item3.title">Backend Systems</h3>
+        <p data-i18n="services.item3.text">APIs, microservices and high-load systems.</p>
+      </div>
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item4.title">QA Automation</h3>
+        <p data-i18n="services.item4.text">Automated tests from unit to E2E.</p>
+      </div>
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item5.title">DevOps &amp; Infrastructure</h3>
+        <p data-i18n="services.item5.text">CI/CD, Kubernetes, monitoring and infrastructure as code.</p>
+      </div>
+      <div class="service-card fade-up">
+        <h3 data-i18n="services.item6.title">Product Discovery</h3>
+        <p data-i18n="services.item6.text">Research, UX and a plan for the first release.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASES ──────────────────────────────────────────── -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="nav.cases">Cases</span>
+      <h2 data-i18n="cases.title">Launched <span class="accent-word">products</span></h2>
+      <p data-i18n="cases.description">Launched. Maintained. Growing.</p>
+    </div>
+    <div class="case-showcase">
+      <div class="cases-grid">
+      <article class="case-card is-active" data-case="restio" tabindex="0">
+        <div class="case-body">
+          <span class="case-index">01</span>
+          <div class="case-heading">
+            <h3 class="case-title">Restio</h3>
+          <span class="case-img-label" data-i18n="cases.restio.category">HoReCa · Kazakhstan</span>
+          </div>
+          <p class="case-text" data-i18n="cases.restio.text">Online table booking for restaurants.</p>
+          <div class="case-tags">
+            <span class="case-tag" data-i18n="cases.restio.tag1">Booking flow</span>
+            <span class="case-tag" data-i18n="cases.restio.tag2">HoReCa SaaS</span>
+            <span class="case-tag" data-i18n="cases.restio.tag3">Tariffs</span>
+          </div>
+          <a href="https://restio.info" target="_blank" rel="noopener" class="case-link">
+            restio.info
+          </a>
+        </div>
+        <div class="case-mobile-preview"><img src="/images/products/restio.webp" alt="Restio restaurant booking platform" loading="lazy" /></div>
+      </article>
+
+      <article class="case-card" data-case="fastfit" tabindex="0">
+        <div class="case-body">
+          <span class="case-index">02</span>
+          <div class="case-heading">
+            <h3 class="case-title">FastFit Resume</h3>
+          <span class="case-img-label" data-i18n="cases.fastfit.category">SaaS · International</span>
+          </div>
+          <p class="case-text" data-i18n="cases.fastfit.text">Resume builder with import, templates and AI assistance.</p>
+          <div class="case-tags">
+            <span class="case-tag" data-i18n="cases.fastfit.tag1">SaaS funnel</span>
+            <span class="case-tag" data-i18n="cases.fastfit.tag2">AI copy</span>
+            <span class="case-tag" data-i18n="cases.fastfit.tag3">Resume builder</span>
+          </div>
+          <a href="https://fastfitresume.com" target="_blank" rel="noopener" class="case-link">
+            fastfitresume.com
+          </a>
+        </div>
+        <div class="case-mobile-preview"><img src="/images/products/fastfitresume.webp" alt="FastFit Resume product interface" loading="lazy" /></div>
+      </article>
+
+      <article class="case-card" data-case="baru" tabindex="0">
+        <div class="case-body">
+          <span class="case-index">03</span>
+          <div class="case-heading">
+            <h3 class="case-title">Baru</h3>
+          <span class="case-img-label" data-i18n="cases.baru.category">Marketplace · Kazakhstan</span>
+          </div>
+          <p class="case-text" data-i18n="cases.baru.text">Search and discovery for places around the city.</p>
+          <div class="case-tags">
+            <span class="case-tag" data-i18n="cases.baru.tag1">Marketplace</span>
+            <span class="case-tag" data-i18n="cases.baru.tag2">Search</span>
+            <span class="case-tag" data-i18n="cases.baru.tag3">Geo UX</span>
+          </div>
+          <a href="https://baru.kz" target="_blank" rel="noopener" class="case-link">
+            baru.kz
+          </a>
+        </div>
+        <div class="case-mobile-preview"><img src="/images/products/baru.webp" alt="Baru city marketplace interface" loading="lazy" /></div>
+      </article>
+
+      <article class="case-card" data-case="lawkit" tabindex="0">
+        <div class="case-body">
+          <span class="case-index">04</span>
+          <div class="case-heading">
+            <h3 class="case-title">LawKit</h3>
+          <span class="case-img-label" data-i18n="cases.lawkit.category">LegalTech · Kazakhstan</span>
+          </div>
+          <p class="case-text" data-i18n="cases.lawkit.text">AI assistant for case analysis and legal documents.</p>
+          <div class="case-tags">
+            <span class="case-tag" data-i18n="cases.lawkit.tag1">LegalTech</span>
+            <span class="case-tag" data-i18n="cases.lawkit.tag2">AI workflow</span>
+            <span class="case-tag" data-i18n="cases.lawkit.tag3">Document automation</span>
+          </div>
+          <a href="https://lawkit.kz" target="_blank" rel="noopener" class="case-link">
+            lawkit.kz
+          </a>
+        </div>
+        <div class="case-mobile-preview"><img src="/images/products/lawkit.webp" alt="LawKit legal assistant interface" loading="lazy" /></div>
+      </article>
+
+      <article class="case-card" data-case="atlans" tabindex="0">
+        <div class="case-body">
+          <span class="case-index">05</span>
+          <div class="case-heading">
+            <h3 class="case-title">askAtlans</h3>
+          <span class="case-img-label" data-i18n="cases.atlans.category">SaaS · Self-reflection</span>
+          </div>
+          <p class="case-text" data-i18n="cases.atlans.text">A tool for reflection and deliberate decisions.</p>
+          <div class="case-tags">
+            <span class="case-tag" data-i18n="cases.atlans.tag1">Self-reflection</span>
+            <span class="case-tag" data-i18n="cases.atlans.tag2">Awareness SaaS</span>
+            <span class="case-tag" data-i18n="cases.atlans.tag3">Exocortex</span>
+          </div>
+          <a href="https://www.askatlans.com" target="_blank" rel="noopener" class="case-link">
+            askatlans.com
+          </a>
+        </div>
+        <div class="case-mobile-preview"><img src="/images/products/atlans.webp" alt="askAtlans self-reflection product interface" loading="lazy" /></div>
+      </article>
+
+      </div>
+
+      <aside class="case-stage" aria-hidden="true">
+        <div class="case-stage-meta">
+          <span class="case-stage-count">01 / 05</span>
+          <strong class="case-stage-name">Restio</strong>
+        </div>
+        <div class="case-stage-viewport">
+          <figure class="case-stage-image is-active" data-case="restio"><img src="/images/products/restio.webp" alt="" /></figure>
+          <figure class="case-stage-image" data-case="fastfit"><img src="/images/products/fastfitresume.webp" alt="" /></figure>
+          <figure class="case-stage-image" data-case="baru"><img src="/images/products/baru.webp" alt="" /></figure>
+          <figure class="case-stage-image" data-case="lawkit"><img src="/images/products/lawkit.webp" alt="" /></figure>
+          <figure class="case-stage-image" data-case="atlans"><img src="/images/products/atlans.webp" alt="" /></figure>
+        </div>
+        <div class="case-stage-line" aria-hidden="true"><span></span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── STUDIO MODEL ───────────────────────────────────── -->
+<section id="studio" class="section-alt">
+  <div class="container">
+    <div class="studio-grid">
+      <div class="studio-photo-col fade-up">
+        <div class="studio-photo-wrap">
+          <img
+            src="/images/backgrounds/studio-office.webp"
+            alt="Engineering team working at computer stations"
+            loading="lazy"
+          />
+        </div>
+        <div class="studio-overlay-badge">
+          <strong data-i18n="studio.badge.title">Studio</strong>
+          <span data-i18n="studio.badge.text">not a<br/>freelancer pool</span>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <span class="section-label" data-i18n="nav.studio">Studio</span>
+        <h2 class="studio-title" data-i18n="studio.title">One team. <span class="accent-word">One result.</span></h2>
+        <p class="studio-description" data-i18n="studio.description">Product, design, engineering, QA and launch stay inside Insteppe.</p>
+        <div class="studio-list">
+          <div class="studio-item">
+            <strong data-i18n="studio.item1.title">One point of ownership</strong>
+            <span data-i18n="studio.item1.text">The studio owns the result.</span>
+          </div>
+          <div class="studio-item">
+            <strong data-i18n="studio.item2.title">Built on real launches</strong>
+            <span data-i18n="studio.item2.text">Our process comes from five live products.</span>
+          </div>
+          <div class="studio-item">
+            <strong data-i18n="studio.item3.title">A team shaped to the task</strong>
+            <span data-i18n="studio.item3.text">The work stays inside the studio.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO WE WORK WITH ────────────────────────────────── -->
+<section id="audience" class="section">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-label" data-i18n="who.label">When to bring us in</span>
+      <h2 data-i18n="who.title">When you need the <span class="accent-word">whole product delivered</span></h2>
+      <p data-i18n="who.sub">From a first release to a complex rebuild.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card fade-up">
+        <div class="who-number">01</div>
+        <h3 data-i18n="who.item1.title">Launch a new product</h3>
+        <p data-i18n="who.item1.text">You know the market. We turn the idea into design, software and a live first release.</p>
+      </div>
+      <div class="who-card fade-up">
+        <div class="who-number">02</div>
+        <h3 data-i18n="who.item2.title">Rebuild an existing product</h3>
+        <p data-i18n="who.item2.text">The current service is outdated, hard to scale or needs a new architecture.</p>
+      </div>
+      <div class="who-card fade-up">
+        <div class="who-number">03</div>
+        <h3 data-i18n="who.item3.title">Deliver a critical release</h3>
+        <p data-i18n="who.item3.text">You need an autonomous team to take one important launch from design to production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ────────────────────────────────────────── -->
+<section id="approach" class="section-alt">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-label" data-i18n="process.label">How we work</span>
+      <h2 data-i18n="process.title">From brief <span class="accent-word">to launch</span></h2>
+      <p data-i18n="process.sub">Four clear stages.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-num">01</div>
+        <h3 data-i18n="process.step1.title">Discovery</h3>
+        <p data-i18n="process.step1.text">Define the problem, users and first release.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">02</div>
+        <h3 data-i18n="process.step2.title">Architecture</h3>
+        <p data-i18n="process.step2.text">Choose the product structure and technical approach.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">03</div>
+        <h3 data-i18n="process.step3.title">Engineering</h3>
+        <p data-i18n="process.step3.text">Build and test in short iterations.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">04</div>
+        <h3 data-i18n="process.step4.title">Launch &amp; Scale</h3>
+        <p data-i18n="process.step4.text">Launch, observe and improve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECH STACK ─────────────────────────────────────── -->
+<section id="stack" class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="stack.label">Tech stack</span>
+      <h2 data-i18n="stack.title">Our technology expertise</h2>
+      <p data-i18n="stack.sub">The stack follows the product.</p>
+    </div>
+    <div class="tech-grid fade-up">
+      <span class="tech-pill"><span class="tdot"></span>Java</span>
+      <span class="tech-pill"><span class="tdot"></span>Go</span>
+      <span class="tech-pill"><span class="tdot"></span>Spring Boot</span>
+      <span class="tech-pill"><span class="tdot"></span>React</span>
+      <span class="tech-pill"><span class="tdot"></span>TypeScript</span>
+      <span class="tech-pill"><span class="tdot"></span>Angular</span>
+      <span class="tech-pill"><span class="tdot"></span>Flutter</span>
+      <span class="tech-pill"><span class="tdot"></span>React Native</span>
+      <span class="tech-pill"><span class="tdot"></span>PostgreSQL</span>
+      <span class="tech-pill"><span class="tdot"></span>Redis</span>
+      <span class="tech-pill"><span class="tdot"></span>Docker</span>
+      <span class="tech-pill"><span class="tdot"></span>Kubernetes</span>
+      <span class="tech-pill"><span class="tdot"></span>AWS</span>
+      <span class="tech-pill"><span class="tdot"></span>CI/CD</span>
+      <span class="tech-pill"><span class="tdot"></span>Grafana</span>
+      <span class="tech-pill"><span class="tdot"></span>Selenium</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ─────────────────────────────────────── -->
+<section id="cta" class="section-alt">
+  <div class="container fade-up">
+    <div class="cta-banner">
+      <div class="cta-banner-bg"></div>
+      <h2 data-i18n="cta.heading">Have a <span class="accent-word">project?</span></h2>
+      <p data-i18n="cta.sub">Share the context. We will answer directly.</p>
+      <a href="#contact" class="btn btn-primary btn-lg">
+        <span data-i18n="cta.btn">Discuss it</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info fade-up">
+        <span class="section-label" data-i18n="nav.contact">Contact</span>
+        <h2 data-i18n="contact.title">Discuss your <span class="accent-word">product</span></h2>
+        <p data-i18n="contact.description">Describe the task in a few lines.</p>
+        <div class="contact-meta">
+          <div class="contact-meta-item">
+            <span class="meta-label" data-i18n="contact.meta.email">Email</span>
+            hello@insteppe.com
+          </div>
+          <a href="https://www.linkedin.com/company/insteppe" target="_blank" rel="noopener" class="contact-meta-item">
+            <span class="meta-label" data-i18n="contact.meta.social">Social</span>
+            LinkedIn
+          </a>
+          <div class="contact-meta-item">
+            <span class="meta-label" data-i18n="contact.meta.studio">Studio</span>
+            <span data-i18n="contact.meta.location">Almaty · Astana · Remote</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="form-card">
+          <form class="form-grid" id="contactForm">
+            <div class="form-field">
+              <label data-i18n="contact.form.name">Name</label>
+              <input type="text" name="name" required placeholder="Name" data-i18n-placeholder="contact.form.name" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="contact.form.email">Email</label>
+              <input type="email" name="email" required autocomplete="email" placeholder="Email" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="contact.form.phone">Phone</label>
+              <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" minlength="7" maxlength="24" placeholder="+7 700 000 00 00" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="contact.form.subject">Subject</label>
+              <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="contact.form.subject" />
+            </div>
+            <div class="form-field full">
+              <label data-i18n="contact.form.message">Message</label>
+              <textarea name="message" rows="4" required placeholder="Message" data-i18n-placeholder="contact.form.message"></textarea>
+            </div>
+            <div class="full">
+              <div class="captcha-wrap">
+                <div class="captcha-row">
+                  <div class="captcha-num" id="num1">?</div>
+                  <div class="captcha-op" id="operator">+</div>
+                  <div class="captcha-num" id="num2">?</div>
+                  <div class="captcha-op">=</div>
+                  <input type="number" id="captcha-answer" class="captcha-input" required placeholder="?" />
+                </div>
+                <div class="captcha-hint" data-i18n="contact.captcha.help">Solve the simple math problem</div>
+              </div>
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary btn-full">
+                <span data-i18n="contact.button">Send message</span>
+              </button>
+            </div>
+          </form>
+          <div id="success-message" class="msg-success">
+            <div class="msg-icon">✓</div>
+            <h3 data-i18n="contact.success.title">Message sent!</h3>
+            <p data-i18n="contact.success.text">Thank you for reaching out! We will contact you shortly.</p>
+          </div>
+          <div id="error-message" class="msg-error">
+            <span data-i18n="contact.error.text">Incorrect answer. Please try again.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer id="footer" class="site-footer">
+  <div class="container footer-inner">
+    <a href="#home" class="footer-logo" aria-label="Insteppe Studio">
+      <span class="brand-wordmark" aria-hidden="true">
+        <span class="brand-name">INSTEPPE</span>
+        <span class="brand-descriptor">PRODUCT STUDIO</span>
+      </span>
+    </a>
+    <span>© 2025-<span id="year"></span> Insteppe Studio. <span data-i18n="footer.rights">All rights reserved.</span></span>
+    <div class="footer-links">
+      <a href="/privacy.html"   data-i18n="footer.privacy">Privacy</a>
+      <a href="/terms.html"     data-i18n="footer.terms">Terms</a>
+      <a href="/copyright.html" data-i18n="footer.copyright_link">Copyright</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  const cy = new Date().getFullYear();
+  document.getElementById('year').textContent = cy > 2025 ? cy : 2025;
+
+  // ── Scroll fade-in ───────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Translations ─────────────────────────────────────
+  const T = {
+    ru: {
+      'page.title':'Insteppe Studio - продуктовый дизайн и разработка ПО',
+      'meta.description':'Продуктовая студия из Казахстана для SaaS, маркетплейсов, LegalTech и продуктов для саморефлексии. За нами Restio, FastFit Resume, Baru, LawKit, askAtlans и кастомные цифровые продукты.',
+      'nav.services':'Услуги','nav.studio':'Студия','nav.approach':'Процесс','nav.cases':'Кейсы','nav.contact':'Контакты',
+      'header.cta':'Обсудить задачу',
+      'hero.tagline':'Цифровые продукты · Алматы и Астана',
+      'hero.heading':'Цифровые продукты',
+      'hero.description':'Дизайн и разработка.<br>Web, mobile и backend.',
+      'hero.cases_btn':'Наши проекты',
+      'hero.trust':'продуктов уже работают',
+      'hero.stat1.text':'лет в разработке','hero.stat2.text':'одна команда','hero.stat3.text':'запущенных продуктов','hero.stat4.text':'Алматы · Астана · Удалённо',
+      'strip.label':'Продукты, которые мы создали',
+      'services.label':'Услуги','services.title':'Что <span class="accent-word">делаем</span>','services.sub':'Проектируем и разрабатываем продукты целиком.',
+      'services.item1.title':'Web-приложения','services.item1.text':'Платформы, кабинеты и B2B/B2C-сервисы.',
+      'services.item2.title':'Мобильные приложения','services.item2.text':'Приложения для iOS и Android.',
+      'services.item3.title':'Backend-системы','services.item3.text':'API, микросервисы и системы под высокую нагрузку.',
+      'services.item4.title':'QA-автоматизация','services.item4.text':'Автотесты от unit до E2E.',
+      'services.item5.title':'DevOps & инфраструктура','services.item5.text':'CI/CD, Kubernetes, мониторинг и IaC.',
+      'services.item6.title':'Product Discovery','services.item6.text':'Аналитика, UX и план первой версии.',
+      'cases.title':'Запущенные <span class="accent-word">продукты</span>','cases.description':'Запустили. Поддерживаем. Развиваем.',
+      'cases.restio.category':'HoReCa · Казахстан','cases.restio.text':'Онлайн-бронирование столиков для ресторанов.',
+      'cases.restio.tag1':'Бронирование','cases.restio.tag2':'HoReCa SaaS','cases.restio.tag3':'Тарифы',
+      'cases.fastfit.category':'SaaS · Международный','cases.fastfit.text':'Конструктор резюме с импортом, шаблонами и AI-подсказками.',
+      'cases.fastfit.tag1':'SaaS-воронка','cases.fastfit.tag2':'AI-копирайтинг','cases.fastfit.tag3':'Resume builder',
+      'cases.baru.category':'Маркетплейс · Казахстан','cases.baru.text':'Поиск мест и организаций по городу.',
+      'cases.baru.tag1':'Маркетплейс','cases.baru.tag2':'Поиск','cases.baru.tag3':'Geo UX',
+      'cases.lawkit.category':'LegalTech · Казахстан','cases.lawkit.text':'AI-ассистент для анализа дела и подготовки документов.',
+      'cases.lawkit.tag1':'LegalTech','cases.lawkit.tag2':'AI-процесс','cases.lawkit.tag3':'Автоматизация документов',
+      'cases.atlans.category':'SaaS · Саморефлексия','cases.atlans.text':'Инструмент для рефлексии и осмысленных решений.',
+      'cases.atlans.tag1':'Саморефлексия','cases.atlans.tag2':'SaaS осознанности','cases.atlans.tag3':'Экзокортекс',
+      'studio.badge.title':'Студия','studio.badge.text':'не пул<br/>фрилансеров',
+      'studio.title':'Одна команда. <span class="accent-word">Один результат.</span>','studio.description':'Продукт, дизайн, разработка, QA и запуск — внутри Insteppe.',
+      'studio.item1.title':'Одна точка ответственности','studio.item1.text':'За результат отвечает студия.',
+      'studio.item2.title':'Опыт собственных запусков','studio.item2.text':'Работаем на опыте пяти запущенных продуктов.',
+      'studio.item3.title':'Команда под задачу','studio.item3.text':'Работа остаётся внутри Insteppe.',
+      'who.label':'Когда нас подключают','who.title':'Когда нужно сделать <span class="accent-word">продукт целиком</span>','who.sub':'От первой версии до сложного перезапуска.',
+      'who.item1.title':'Запустить новый продукт','who.item1.text':'Вы знаете рынок. Мы превращаем идею в дизайн, разработку и работающий первый релиз.',
+      'who.item2.title':'Перезапустить существующий','who.item2.text':'Текущий сервис устарел, плохо масштабируется или требует новой архитектуры.',
+      'who.item3.title':'Успеть к важному релизу','who.item3.text':'Самостоятельная команда берёт один запуск целиком — от дизайна до production.',
+      'process.label':'Процесс','process.title':'От задачи <span class="accent-word">до запуска</span>','process.sub':'Четыре понятных этапа.',
+      'process.step1.title':'Дискавери','process.step1.text':'Фиксируем задачу, пользователей и первую версию.',
+      'process.step2.title':'Архитектура','process.step2.text':'Определяем структуру продукта и технические решения.',
+      'process.step3.title':'Разработка','process.step3.text':'Делаем и проверяем короткими итерациями.',
+      'process.step4.title':'Запуск и развитие','process.step4.text':'Запускаем, наблюдаем и улучшаем.',
+      'stack.label':'Технологии','stack.title':'Стек','stack.sub':'Стек выбираем под продукт.',
+      'cta.heading':'Есть <span class="accent-word">задача?</span>','cta.sub':'Опишите контекст — ответим по делу.','cta.btn':'Обсудить',
+      'contact.title':'Обсудим <span class="accent-word">продукт</span>','contact.description':'Коротко опишите задачу.',
+      'contact.meta.email':'Почта','contact.meta.social':'Соцсети','contact.meta.studio':'Студия','contact.meta.location':'Алматы · Астана · Удалённо',
+      'contact.form.name':'Имя','contact.form.email':'Email','contact.form.phone':'Телефон','contact.form.subject':'Тема','contact.form.message':'Сообщение',
+      'contact.button':'Отправить сообщение','contact.captcha.help':'Решите простой пример',
+      'contact.success.title':'Сообщение отправлено!','contact.success.text':'Спасибо за обращение! Свяжемся в ближайшее время.',
+      'contact.error.text':'Неверный ответ. Попробуйте снова.',
+      'footer.privacy':'Конфиденциальность','footer.terms':'Условия','footer.copyright_link':'Авторские права','footer.rights':'Все права защищены.'
+    },
+    en: {
+      'page.title':'Insteppe Studio - Product Design and Software Engineering',
+      'meta.description':'Product studio from Kazakhstan building SaaS, marketplaces, LegalTech and self-reflection products. Behind Restio, FastFit Resume, Baru, LawKit, askAtlans and custom digital products.',
+      'nav.services':'Services','nav.studio':'Studio','nav.approach':'Process','nav.cases':'Cases','nav.contact':'Contact',
+      'header.cta':'Discuss a project',
+      'hero.tagline':'Digital products · Almaty &amp; Astana',
+      'hero.heading':'Digital products',
+      'hero.description':'Design and engineering.<br>Web, mobile and backend.',
+      'hero.cases_btn':'See our work',
+      'hero.trust':'products already live',
+      'hero.stat1.text':'years in engineering','hero.stat2.text':'one team','hero.stat3.text':'products launched','hero.stat4.text':'Almaty · Astana · Remote',
+      'strip.label':"Products we've built",
+      'services.label':'Services','services.title':'What <span class="accent-word">we do</span>','services.sub':'Products designed and built end to end.',
+      'services.item1.title':'Web Applications','services.item1.text':'Platforms, dashboards and B2B/B2C services.',
+      'services.item2.title':'Mobile Apps','services.item2.text':'Apps for iOS and Android.',
+      'services.item3.title':'Backend Systems','services.item3.text':'APIs, microservices and high-load systems.',
+      'services.item4.title':'QA Automation','services.item4.text':'Automated tests from unit to E2E.',
+      'services.item5.title':'DevOps &amp; Infrastructure','services.item5.text':'CI/CD, Kubernetes, monitoring and IaC.',
+      'services.item6.title':'Product Discovery','services.item6.text':'Research, UX and a plan for the first release.',
+      'cases.title':'Launched <span class="accent-word">products</span>','cases.description':'Launched. Maintained. Growing.',
+      'cases.restio.category':'HoReCa · Kazakhstan','cases.restio.text':'Online table booking for restaurants.',
+      'cases.restio.tag1':'Booking flow','cases.restio.tag2':'HoReCa SaaS','cases.restio.tag3':'Tariffs',
+      'cases.fastfit.category':'SaaS · International','cases.fastfit.text':'Resume builder with import, templates and AI assistance.',
+      'cases.fastfit.tag1':'SaaS funnel','cases.fastfit.tag2':'AI copy','cases.fastfit.tag3':'Resume builder',
+      'cases.baru.category':'Marketplace · Kazakhstan','cases.baru.text':'Search and discovery for places around the city.',
+      'cases.baru.tag1':'Marketplace','cases.baru.tag2':'Search','cases.baru.tag3':'Geo UX',
+      'cases.lawkit.category':'LegalTech · Kazakhstan','cases.lawkit.text':'AI assistant for case analysis and legal documents.',
+      'cases.lawkit.tag1':'LegalTech','cases.lawkit.tag2':'AI workflow','cases.lawkit.tag3':'Document automation',
+      'cases.atlans.category':'SaaS · Self-reflection','cases.atlans.text':'A tool for reflection and deliberate decisions.',
+      'cases.atlans.tag1':'Self-reflection','cases.atlans.tag2':'Awareness SaaS','cases.atlans.tag3':'Exocortex',
+      'studio.badge.title':'Studio','studio.badge.text':'not a<br/>freelancer pool',
+      'studio.title':'One team. <span class="accent-word">One result.</span>','studio.description':'Product, design, engineering, QA and launch stay inside Insteppe.',
+      'studio.item1.title':'One point of ownership','studio.item1.text':'The studio owns the result.',
+      'studio.item2.title':'Built on real launches','studio.item2.text':'Our process comes from five live products.',
+      'studio.item3.title':'A team shaped to the task','studio.item3.text':'The work stays inside Insteppe.',
+      'who.label':'When to bring us in','who.title':'When you need the <span class="accent-word">whole product delivered</span>','who.sub':'From a first release to a complex rebuild.',
+      'who.item1.title':'Launch a new product','who.item1.text':'You know the market. We turn the idea into design, software and a live first release.',
+      'who.item2.title':'Rebuild an existing product','who.item2.text':'The current service is outdated, hard to scale or needs a new architecture.',
+      'who.item3.title':'Deliver a critical release','who.item3.text':'You need an autonomous team to take one important launch from design to production.',
+      'process.label':'Process','process.title':'From brief <span class="accent-word">to launch</span>','process.sub':'Four clear stages.',
+      'process.step1.title':'Discovery','process.step1.text':'Define the problem, users and first release.',
+      'process.step2.title':'Architecture','process.step2.text':'Choose the product structure and technical approach.',
+      'process.step3.title':'Engineering','process.step3.text':'Build and test in short iterations.',
+      'process.step4.title':'Launch &amp; Growth','process.step4.text':'Launch, observe and improve.',
+      'stack.label':'Technology','stack.title':'Stack','stack.sub':'The stack follows the product.',
+      'cta.heading':'Have a <span class="accent-word">project?</span>','cta.sub':'Share the context. We will answer directly.','cta.btn':'Discuss it',
+      'contact.title':'Discuss your <span class="accent-word">product</span>','contact.description':'Describe the task in a few lines.',
+      'contact.meta.email':'Email','contact.meta.social':'Social','contact.meta.studio':'Studio','contact.meta.location':'Almaty · Astana · Remote',
+      'contact.form.name':'Name','contact.form.email':'Email','contact.form.phone':'Phone','contact.form.subject':'Subject','contact.form.message':'Message',
+      'contact.button':'Send message','contact.captcha.help':'Solve the simple math problem',
+      'contact.success.title':'Message sent!','contact.success.text':'Thank you for reaching out! We will contact you shortly.',
+      'contact.error.text':'Incorrect answer. Please try again.',
+      'footer.privacy':'Privacy','footer.terms':'Terms','footer.copyright_link':'Copyright','footer.rights':'All rights reserved.'
+    }
+  };
+
+  let lang = localStorage.getItem('insteppe-lang') || 'en';
+  const langBtns = document.querySelectorAll('[data-lang-btn]');
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('insteppe-lang', l);
+    document.documentElement.setAttribute('lang', l === 'ru' ? 'ru' : 'en');
+    document.title = T[l]['page.title'];
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', T[l]['meta.description']);
+    langBtns.forEach(b => b.classList.toggle('is-active', b.dataset.langBtn === l));
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = T[l][el.dataset.i18n];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const v = T[l][el.dataset.i18nPlaceholder];
+      if (v) el.setAttribute('placeholder', v);
+    });
+    window.dispatchEvent(new CustomEvent('insteppe:languagechange'));
+  }
+
+  langBtns.forEach(b => b.addEventListener('click', () => { if (b.dataset.langBtn !== lang) applyLang(b.dataset.langBtn); }));
+  applyLang(lang);
+
+  // ── Captcha ──────────────────────────────────────────
+  let captchaAnswer = 0;
+  function generateCaptcha() {
+    const a = Math.floor(Math.random()*10)+1, b = Math.floor(Math.random()*10)+1;
+    if (Math.random() > .5) {
+      captchaAnswer = a+b;
+      document.getElementById('num1').textContent = a;
+      document.getElementById('num2').textContent = b;
+      document.getElementById('operator').textContent = '+';
+    } else {
+      const big = Math.max(a,b), small = Math.min(a,b);
+      captchaAnswer = big-small;
+      document.getElementById('num1').textContent = big;
+      document.getElementById('num2').textContent = small;
+      document.getElementById('operator').textContent = '−';
+    }
+  }
+  generateCaptcha();
+
+  // ── Form ─────────────────────────────────────────────
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const ans = parseInt(document.getElementById('captcha-answer').value, 10);
+    if (ans !== captchaAnswer) {
+      const err = document.getElementById('error-message');
+      err.style.display = 'block';
+      generateCaptcha();
+      document.getElementById('captcha-answer').value = '';
+      setTimeout(() => { err.style.display = 'none'; }, 4000);
+      return;
+    }
+    const fd = new FormData(e.target);
+    const name = fd.get('name'), email = fd.get('email'), phone = fd.get('phone'),
+          subject = fd.get('subject') || (lang==='ru' ? 'Запрос по проекту' : 'Project request'),
+          message = fd.get('message');
+    const btn = e.target.querySelector('button[type="submit"]');
+    const inputs = e.target.querySelectorAll('input, textarea, button');
+    inputs.forEach(el => el.disabled = true);
+    btn.innerHTML = lang==='ru' ? '<span>Отправляем…</span>' : '<span>Sending…</span>';
+    const gfd = new FormData();
+    gfd.append('entry.235762051', name);
+    gfd.append('entry.1520040868', email);
+    gfd.append('entry.733062920', subject);
+    gfd.append('entry.310541831', `Phone: ${phone}\n\n${message}`);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfAzbVfDF0_O_Zub5tLJp2UrSZ2-D78YeOY4IHqy90lhfX9Gg/formResponse', {
+      method:'POST', mode:'no-cors', body: gfd
+    }).then(() => {
+      e.target.style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+    }).catch(() => {
+      inputs.forEach(el => el.disabled = false);
+      btn.innerHTML = `<span>${T[lang]['contact.button']}</span>`;
+      window.location.href = `mailto:hello@insteppe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`)}`;
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="/js/interactive-showcase.js"></script>
+<script src="/js/motion.js"></script>
+</body>
+</html>

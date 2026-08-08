@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Фон с градиентом -->
+  <rect width="180" height="180" rx="40" fill="url(#grad)"/>
+  
+  <!-- Буква I -->
+  <text x="90" y="130" font-family="Arial, sans-serif" font-size="100" font-weight="bold" text-anchor="middle" fill="white">I</text>
+  
+  <!-- Звездочка в правом верхнем углу - БОЛЬШАЯ -->
+  <path d="M140,50 L145,35 L160,32 L150,20 L153,5 L140,12 L127,5 L130,20 L120,32 L135,35 z" 
+        fill="url(#starGrad)" stroke="white" stroke-width="2" opacity="1" />
+</svg> 
